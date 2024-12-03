@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Typography */
 * {
   box-sizing: border-box;
@@ -428,7 +432,7 @@
 
 body {
   color: var(--color-surface-white);
-  background-color: var(--dark);
+  background-color: #FFFFFF;
   font-family: Mori, sans-serif;
   font-weight: 400;
   margin: 0;

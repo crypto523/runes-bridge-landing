@@ -1,45 +1,24 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Loading from '@/components/Loading/Loading';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(useGSAP);
 }
 
 export default function Home() {
+  const [preloading, setPreloading] = useState<boolean>(true);
   const container = useRef<HTMLElement | any>();
-  const tl = useRef<GSAPTimeline | any>();
-
-  const toggleTimeline = () => {
-    tl.current.reversed(!tl.current.reversed());
-  };
-
-  useGSAP(
-    () => {
-      const boxes = gsap.utils.toArray('.box');
-      tl.current = gsap
-        .timeline()
-        .to(boxes[0], { x: 120, rotation: 360 })
-        .to(boxes[1], { x: -120, rotation: -360 }, '<')
-        .to(boxes[2], { y: -166 })
-        .reverse();
-    },
-    { scope: container }
-  );
 
   return (
-    <main>
+    <main className='relative w-full h-full'>
       <section className="boxes-container" ref={container}>
-        <h2>Use the button to toggle a Timeline</h2>
-        <div>
-          <button onClick={toggleTimeline}>Toggle Timeline</button>
-        </div>
-        <div className="box gradient-blue">Box 1</div>
-        <div className="box gradient-blue">Box 2</div>
-        <div className="box gradient-blue">Box 3</div>
+        
       </section>
+      {preloading && <Loading setPreloading={() => setPreloading(false)} />}
     </main>
   );
 }
