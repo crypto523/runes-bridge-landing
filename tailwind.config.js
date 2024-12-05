@@ -12,6 +12,8 @@ module.exports = {
     extend: {
       fontFamily: {
         conthrax: ['var(--font-conthrax)'],
+        inter: ['var(--font-inter)'],
+        poppins: ['var(--font-poppins)'],
       }
     },
   },

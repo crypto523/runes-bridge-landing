@@ -1,24 +1,71 @@
-'use client';
+"use client";
 
-import { useRef, useState } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import Loading from '@/components/Loading/Loading';
+import { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { TextPlugin } from "gsap/all";
 
-if (typeof window !== 'undefined') {
+import Loading from "@/components/Loading/Loading";
+import LoadingV from "@/components/Loading/LoadingV";
+import Hero from "@/components/Sections/Hero";
+
+if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(TextPlugin);
 }
 
 export default function Home() {
   const [preloading, setPreloading] = useState<boolean>(true);
-  const container = useRef<HTMLElement | any>();
+  const [vLoading, setVLoading] = useState<boolean>(false);
+
+  const onFinishPreloading = () => {
+    setPreloading(false);
+    setVLoading(true);
+  };
+
+  const onFinishV = () => {
+    const tl = gsap.timeline();
+    tl.to("div#landingv", {
+      opacity: 0,
+      duration: 2,
+      onComplete: () => {
+        setVLoading(false);
+      },
+    })
+      .to(
+        "div#banner",
+        {
+          opacity: 1,
+          translateY: 0,
+          duration: 2,
+        },
+        "<"
+      )
+      .to(
+        "div#hero-buttons",
+        {
+          opacity: 1,
+          duration: 2,
+        },
+        "<"
+      )
+      .to(
+        "div#planet",
+        {
+          opacity: 1,
+          duration: 2,
+          translateY: 0,
+        },
+        "<"
+      )
+  };
 
   return (
-    <main className='relative w-full h-full'>
-      <section className="boxes-container" ref={container}>
-        
-      </section>
-      {preloading && <Loading setPreloading={() => setPreloading(false)} />}
+    <main className="relative w-full">
+      <Hero />
+
+      {preloading && <Loading onFinishLoading={onFinishPreloading} />}
+      {vLoading && <LoadingV onFinishV={onFinishV} />}
     </main>
   );
 }

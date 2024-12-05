@@ -1,11 +1,25 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { Inter, Poppins } from 'next/font/google';
 
 const conthrax = localFont({
   src: 'font/Conthrax-SemiBold.otf',
   variable: '--font-conthrax',
-})
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  weight: ['400', '700'], // Adjust weights as needed
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${conthrax.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${conthrax.variable} ${inter.variable} ${poppins.variable}`}>
+      <body className='max-w-[1440px] m-auto'>{children}</body>
     </html>
   );
 }
