@@ -50,7 +50,17 @@ const Planet: React.FC = () => {
           ease: "none",
         },
         "-=1"
-      );
+      )
+      .fromTo("#logop", {
+        scale: 0,
+        opacity: 1
+      }, {
+        scale: 1.5,
+        opacity: 0.7,
+        duration: 2,
+        repeat: -1,
+        ease: "none"
+      }, 0);
   });
 
   return (
@@ -89,6 +99,22 @@ const Planet: React.FC = () => {
           height={45}
           alt="ETH"
           className="absolute top-[218px] right-[580px] "
+        />
+        <Image
+          src="/logo.svg"
+          id="logop"
+          width={60}
+          height={60}
+          alt="logo"
+          className="absolute top-[75px] right-[310px] "
+        />
+        <Image
+          src="/logo.svg"
+          id="logop"
+          width={50}
+          height={50}
+          alt="logo"
+          className="absolute bottom-[35px] right-[310px] "
         />
       </div>
     </div>
