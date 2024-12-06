@@ -9,7 +9,7 @@ import Planet from "../Planet/Planet";
 const Hero: React.FC = () => {
 
     return (
-        <section className="w-full h-full" id="hero">
+        <section className="w-full h-full" id="hero" style={{backgroundImage: `url("bg-grid.svg")`}}>
             <Navbar />
             <Banner />
 
