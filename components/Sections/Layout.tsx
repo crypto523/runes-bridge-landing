@@ -33,7 +33,7 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", style 
                         </div>
                     </div>
                     <div className="w-full h-full flex flex-col items-center justify-between">
-                        <Navbar className="p-[22px_42px] border-b-0" subClass="!justify-end gap-14" />
+                        <Navbar className="p-[22px_42px] !border-b-0" subClass="!justify-end gap-14" />
 
                         {children}
 
