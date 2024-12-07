@@ -10,13 +10,12 @@ interface LayoutProps {
     style?: CSSProperties; // Optional inline styles
 }
 
-const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", style }) => {
+const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", style }) => {
     return (
-        <div className={`relative w-full p-[60px_60px] overflow-hidden ${className}`} style={style}>
+        <div className={`w-full p-[30px_60px] ${className}`} style={style}>
             <div className="relative w-full h-full">
-                <Image src="/section-bg.svg" width={1318} height={793} alt="section" className="relative z-10" style={{ width: "100%", objectFit: "cover" }} />
-                <Image src="/vector1.svg" width={50} height={1050} alt="vector1" className="absolute right-0 top-[50%] -z-0" />
-                <div className="absolute inset-0 w-full h-full flex z-10">
+                <Image src="/section-bg.svg" width={1318} height={793} alt="section" style={{ width: "100%", objectFit: "cover" }} />
+                <div className="absolute inset-0 w-full h-full flex">
                     <div className="w-[4.55%] h-full flex flex-col items-center justify-between border-[#626262] border-r-[1px] ">
                         <div className="pt-[65%] cursor-pointer">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,11 +78,11 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", style 
                             </div>
                         </div>
                     </div>
+                        <MenuBar />
                 </div>
             </div>
-            {/* <MenuBar />s */}
         </div>
     );
 };
 
-export default SectionLayout;
+export default SectionLayoutF;
