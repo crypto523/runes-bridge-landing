@@ -15,7 +15,7 @@ const CTOLabs: React.FC = () => {
         />
         <div className="max-w-[504px] ">
           <h6 className="text-[#061012] font-[600] font-poppins text-[24px] leading-[36px] mb-[10px]">
-            Launch a CTO <br /> “Powered by RunesBridge-V"
+            Launch a CTO <br /> &quot;Powered by RunesBridge-V&quot;
           </h6>
           <p className="text-[#444444] font-inter, font-[500] text-[16px] leading-[19.36px]">
             We specialize in helping to launch projects and our niche is the
