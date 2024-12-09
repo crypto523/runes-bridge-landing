@@ -9,6 +9,7 @@ import Loading from "@/components/Loading/Loading";
 import LoadingV from "@/components/Loading/LoadingV";
 import Hero from "@/components/Sections/Hero";
 import CTOLabs from "@/components/Sections/CTOLabs";
+import Features from "@/components/Sections/Features";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -65,6 +66,7 @@ export default function Home() {
     <main className="relative w-full">
       <Hero />
       <CTOLabs />
+      <Features />
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}
