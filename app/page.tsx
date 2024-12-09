@@ -11,6 +11,7 @@ import Hero from "@/components/Sections/Hero";
 import CTOLabs from "@/components/Sections/CTOLabs";
 import Features from "@/components/Sections/Features";
 import Staking from "@/components/Sections/Staking";
+import Governance from "@/components/Sections/Governance";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -69,6 +70,7 @@ export default function Home() {
       <CTOLabs />
       <Features />
       <Staking />
+      <Governance />
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}
