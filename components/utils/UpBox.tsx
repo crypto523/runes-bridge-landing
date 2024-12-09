@@ -10,7 +10,7 @@ interface UpBoxProps {
 const UpBox: React.FC<UpBoxProps> = (props) => {
 
     return (
-        <div className="w-full h-full flex flex-col border-[#6262624D] border-[1px] p-5">
+        <div className="w-full h-full flex flex-col border-[#6262624D] border-[1px] p-5 bg-[#F6F5F54D]">
             <div className="flex items-center gap-[38px]">
                 <props.icon />
                 <props.image />

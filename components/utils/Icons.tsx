@@ -78,6 +78,47 @@ export const ColorSquareIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) 
     </svg>
 )
 
+export const ColorSquareFrameIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="119" height="35" viewBox="0 0 119 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="1.68" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="44.7601" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="44.7601" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="44.7601" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="44.7601" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="59.1199" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="59.1199" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="59.1199" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="59.1199" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="73.4798" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="73.4798" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="73.4798" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="73.4798" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="87.8402" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="87.8402" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="87.8402" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="87.8402" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="102.2" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="102.2" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="102.2" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="102.2" cy="32.76" r="1.68" fill="#A5A5A5" />
+        <circle cx="116.56" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="116.56" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="116.56" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="116.56" cy="32.76" r="1.68" fill="#A5A5A5" />
+    </svg>
+)
+
 export const MoneyReceiveIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
         <path d="M27.7085 40.1042C27.7085 42.9334 29.896 45.2084 32.5794 45.2084H38.0626C40.396 45.2084 42.2918 43.2251 42.2918 40.7459C42.2918 38.0917 41.1252 37.1292 39.4044 36.5167L30.6252 33.4542C28.9043 32.8417 27.7377 31.9084 27.7377 29.2251C27.7377 26.7751 29.6335 24.7626 31.9668 24.7626H37.4502C40.1335 24.7626 42.321 27.0376 42.321 29.8667" stroke="#292D32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -85,6 +126,35 @@ export const MoneyReceiveIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props)
         <path d="M64.1668 35C64.1668 51.1 51.1002 64.1667 35.0002 64.1667C18.9002 64.1667 5.8335 51.1 5.8335 35C5.8335 18.9 18.9002 5.83337 35.0002 5.83337" stroke="#292D32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M49.5835 8.75V20.4167H61.2502" stroke="#292D32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M64.1668 5.83337L49.5835 20.4167" stroke="#292D32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+)
+
+export const MoneyReceiveFrameIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="76" height="35" viewBox="0 0 76 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="1.68" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="30.4002" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="30.4002" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="30.4002" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="44.7601" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="44.7601" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="44.7601" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="44.7601" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="59.1199" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="59.1199" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="59.1199" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="59.1199" cy="32.76" r="1.68" fill="#A5A5A5" />
+        <circle cx="73.4798" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="73.4798" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="73.4798" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="73.4798" cy="32.76" r="1.68" fill="#A5A5A5" />
     </svg>
 )
 
@@ -98,7 +168,7 @@ export const HierarchyIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) =>
     </svg>
 )
 
-export const PeapleIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+export const PeopleIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M52.4999 20.8834C52.3249 20.8542 52.1207 20.8542 51.9457 20.8834C47.9207 20.7376 44.7124 17.4417 44.7124 13.3584C44.7124 9.18755 48.0666 5.83337 52.2374 5.83337C56.4082 5.83337 59.7624 9.21671 59.7624 13.3584C59.7332 17.4417 56.5249 20.7376 52.4999 20.8834Z" stroke="#061012" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M49.4957 42.1167C53.4915 42.7875 57.8957 42.0875 60.9874 40.0167C65.0999 37.275 65.0999 32.7834 60.9874 30.0417C57.8666 27.9709 53.404 27.2708 49.4082 27.9708" stroke="#061012" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -106,5 +176,98 @@ export const PeapleIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <path d="M20.4169 42.1167C16.421 42.7875 12.0169 42.0875 8.9252 40.0167C4.8127 37.275 4.8127 32.7834 8.9252 30.0417C12.046 27.9709 16.5085 27.2708 20.5044 27.9708" stroke="#061012" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M34.9999 42.6709C34.8249 42.6417 34.6207 42.6417 34.4457 42.6709C30.4207 42.525 27.2124 39.2292 27.2124 35.1459C27.2124 30.975 30.5666 27.6208 34.7374 27.6208C38.9082 27.6208 42.2624 31.0042 42.2624 35.1459C42.2332 39.2292 39.0249 42.5542 34.9999 42.6709Z" stroke="#061012" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M26.5126 51.8583C22.4001 54.6 22.4001 59.0916 26.5126 61.8333C31.1793 64.9541 38.8209 64.9541 43.4876 61.8333C47.6001 59.0916 47.6001 54.6 43.4876 51.8583C38.8501 48.7666 31.1793 48.7666 26.5126 51.8583Z" stroke="#061012" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+)
+
+export const PeopleFrameIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="305" height="35" viewBox="0 0 305 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="1.68" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="1.68" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="16.0399" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="30.4002" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="44.7601" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="44.7601" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="44.7601" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="44.7601" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="59.1199" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="59.1199" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="59.1199" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="59.1199" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="73.4798" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="73.4798" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="73.4798" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="73.4798" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="87.8402" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="87.8402" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="87.8402" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="87.8402" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="102.2" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="102.2" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="102.2" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="102.2" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="116.56" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="116.56" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="116.56" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="116.56" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="130.92" cy="1.68" r="1.68" fill="#061012" />
+        <circle cx="130.92" cy="12.04" r="1.68" fill="#061012" />
+        <circle cx="130.92" cy="22.4" r="1.68" fill="#061012" />
+        <circle cx="130.92" cy="32.76" r="1.68" fill="#061012" />
+        <circle cx="145.28" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="145.28" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="145.28" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="145.28" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="159.64" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="159.64" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="159.64" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="159.64" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="174" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="174" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="174" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="174" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="188.36" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="188.36" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="188.36" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="188.36" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="202.72" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="202.72" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="202.72" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="202.72" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="217.08" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="217.08" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="217.08" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="217.08" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="231.44" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="231.44" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="231.44" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="231.44" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="245.8" cy="1.68" r="1.68" fill="#7E7E7E" />
+        <circle cx="245.8" cy="12.04" r="1.68" fill="#7E7E7E" />
+        <circle cx="245.8" cy="22.4" r="1.68" fill="#7E7E7E" />
+        <circle cx="245.8" cy="32.76" r="1.68" fill="#7E7E7E" />
+        <circle cx="260.16" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="260.16" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="260.16" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="260.16" cy="32.76" r="1.68" fill="#A5A5A5" />
+        <circle cx="274.52" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="274.52" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="274.52" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="274.52" cy="32.76" r="1.68" fill="#A5A5A5" />
+        <circle cx="288.88" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="288.88" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="288.88" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="288.88" cy="32.76" r="1.68" fill="#A5A5A5" />
+        <circle cx="303.24" cy="1.68" r="1.68" fill="#A5A5A5" />
+        <circle cx="303.24" cy="12.04" r="1.68" fill="#A5A5A5" />
+        <circle cx="303.24" cy="22.4" r="1.68" fill="#A5A5A5" />
+        <circle cx="303.24" cy="32.76" r="1.68" fill="#A5A5A5" />
     </svg>
 )
