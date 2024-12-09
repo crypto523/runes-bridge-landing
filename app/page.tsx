@@ -10,6 +10,7 @@ import LoadingV from "@/components/Loading/LoadingV";
 import Hero from "@/components/Sections/Hero";
 import CTOLabs from "@/components/Sections/CTOLabs";
 import Features from "@/components/Sections/Features";
+import Staking from "@/components/Sections/Staking";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -67,6 +68,7 @@ export default function Home() {
       <Hero />
       <CTOLabs />
       <Features />
+      <Staking />
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}
