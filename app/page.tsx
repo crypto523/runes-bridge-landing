@@ -14,6 +14,7 @@ import Staking from "@/components/Sections/Staking";
 import Governance from "@/components/Sections/Governance";
 import RBVToken from "@/components/Sections/RBCToken";
 import Welcome from "@/components/Sections/Welcome";
+import Airdrop from "@/components/Sections/Airdrop";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -71,6 +72,7 @@ export default function Home() {
       <Hero />
       <CTOLabs />
       <Welcome />
+      <Airdrop />
       <Features />
       <Staking />
       <Governance />

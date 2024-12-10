@@ -279,9 +279,9 @@ export const WideDistributionIcon: React.FC = (props) => (
 
 export const ShieldIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30.5958 6.50416L16.0416 11.9875C12.6875 13.2417 9.9458 17.2083 9.9458 20.7667V42.4375C9.9458 45.8792 12.2208 50.4 14.9916 52.4708L27.5333 61.8333C31.6458 64.925 38.4125 64.925 42.525 61.8333L55.0666 52.4708C57.8375 50.4 60.1125 45.8792 60.1125 42.4375V20.7667C60.1125 17.1792 57.3708 13.2125 54.0166 11.9583L39.4625 6.50416C36.9833 5.59999 33.0166 5.59999 30.5958 6.50416Z" stroke="#292D32" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M34.9998 36.4583C38.2215 36.4583 40.8332 33.8467 40.8332 30.625C40.8332 27.4033 38.2215 24.7917 34.9998 24.7917C31.7782 24.7917 29.1665 27.4033 29.1665 30.625C29.1665 33.8467 31.7782 36.4583 34.9998 36.4583Z" stroke="#292D32" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M35 36.4583V45.2083" stroke="#292D32" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M30.5958 6.50416L16.0416 11.9875C12.6875 13.2417 9.9458 17.2083 9.9458 20.7667V42.4375C9.9458 45.8792 12.2208 50.4 14.9916 52.4708L27.5333 61.8333C31.6458 64.925 38.4125 64.925 42.525 61.8333L55.0666 52.4708C57.8375 50.4 60.1125 45.8792 60.1125 42.4375V20.7667C60.1125 17.1792 57.3708 13.2125 54.0166 11.9583L39.4625 6.50416C36.9833 5.59999 33.0166 5.59999 30.5958 6.50416Z" stroke="#292D32" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M34.9998 36.4583C38.2215 36.4583 40.8332 33.8467 40.8332 30.625C40.8332 27.4033 38.2215 24.7917 34.9998 24.7917C31.7782 24.7917 29.1665 27.4033 29.1665 30.625C29.1665 33.8467 31.7782 36.4583 34.9998 36.4583Z" stroke="#292D32" strokeWidth="4" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M35 36.4583V45.2083" stroke="#292D32" strokeWidth="4" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 )
 
