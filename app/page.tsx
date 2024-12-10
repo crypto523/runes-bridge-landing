@@ -41,7 +41,7 @@ export default function Home() {
 
   const onFinishV = () => {
     setCurrentSection("HERO");
-    
+
     const tl = gsap.timeline();
     tl.to("div#landingv", {
       opacity: 0,
@@ -55,15 +55,15 @@ export default function Home() {
   return (
     <main className="relative w-full">
       {currentSection === "HERO" && <Hero />}
-      {currentSection === "LABS" && <CTOLabs />}
-      {currentSection === "WELCOME" && <Welcome />}
-      {currentSection === "AIRDROP" && <Airdrop />}
-      {currentSection === "FEATURE" && <Features />}
-      {currentSection === "BRIDGE" && <Bridge />}
-      {currentSection === "STAKING" && <Staking />}
-      {currentSection === "GOVERNANCE" && <Governance />}
-      {currentSection === "TASKBOARD" && <Taskboard />}
-      {currentSection === "RBV" && <RBVToken />}
+      {currentSection === "HERO" && <CTOLabs />}
+      {currentSection === "HERO" && <Welcome />}
+      {currentSection === "HERO" && <Airdrop />}
+      {currentSection === "HERO" && <Features />}
+      {currentSection === "HERO" && <Bridge />}
+      {currentSection === "HERO" && <Staking />}
+      {currentSection === "HERO" && <Governance />}
+      {currentSection === "HERO" && <Taskboard />}
+      {currentSection === "HERO" && <RBVToken />}
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}

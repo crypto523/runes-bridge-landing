@@ -33,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${conthrax.variable} ${inter.variable} ${poppins.variable}`}>
-      <body className='max-w-[1440px] m-auto'>{children}</body>
+      <body className='m-auto'>{children}</body>
     </html>
   );
 }
