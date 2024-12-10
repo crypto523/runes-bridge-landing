@@ -16,6 +16,7 @@ import RBVToken from "@/components/Sections/RBCToken";
 import Welcome from "@/components/Sections/Welcome";
 import Airdrop from "@/components/Sections/Airdrop";
 import Bridge from "@/components/Sections/Bridge";
+import Taskboard from "@/components/Sections/TaskBoard";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -78,6 +79,7 @@ export default function Home() {
       <Bridge />
       <Staking />
       <Governance />
+      <Taskboard />
       <RBVToken />
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
