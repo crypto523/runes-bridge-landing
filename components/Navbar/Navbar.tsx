@@ -5,15 +5,16 @@ import classNames from "classnames"; // Import classnames utility (optional)
 
 interface NavbarProps {
     className?: string; // Add a className prop for customization
+    mainClass?: string;
     subClass?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ className, subClass }) => {
+const Navbar: React.FC<NavbarProps> = ({ className, mainClass, subClass }) => {
     const defaultClasses = "w-full p-[40px_165px] border-b-2 border-[#C4C3CB]";
 
     return (
         <div className={classNames(defaultClasses, className)}>
-            <div className="flex items-center justify-between">
+            <div className={classNames("flex items-center justify-between", mainClass)}>
                 <div className="flex items-center cursor-pointer">
                     <p className="font-conthrax font-[600] text-[20px] leading-[24px] text-[#061012]">
                         RunesBridge

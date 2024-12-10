@@ -12,11 +12,12 @@ interface LayoutProps {
 
 const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", style }) => {
     return (
-        <div className={`w-full p-[30px_60px] ${className}`} style={style}>
+        <div className={`relative w-full p-[60px_60px] overflow-hidden ${className}`} style={style}>
             <div className="relative w-full h-full">
-                <Image src="/section-bg.svg" width={1318} height={793} alt="section" style={{ width: "100%", objectFit: "cover" }} />
-                <div className="absolute inset-0 w-full h-full flex">
-                    <div className="w-[4.55%] h-full flex flex-col items-center justify-between border-[#626262] border-r-[1px] ">
+                <Image src="/sectionf-bg.svg" width={1318} height={793} alt="section" className="relative z-10" style={{ width: "100%", objectFit: "cover" }} />
+                <Image src="/vector1.svg" width={50} height={1050} alt="vector1" className="absolute left-0 top-[50%] -z-0" />
+                <div className="absolute inset-0 w-full h-full flex flex-row-reverse z-10">
+                    <div className="w-[4.55%] h-full flex flex-col items-center justify-between border-[#626262] border-l-[1px] ">
                         <div className="pt-[65%] cursor-pointer">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 17H19M5 12H19M5 7H13" stroke="#626262" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -32,13 +33,13 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", style
                         </div>
                     </div>
                     <div className="w-full h-full flex flex-col items-center justify-between">
-                        <Navbar className="p-[22px_42px] border-b-0" subClass="!justify-end gap-14" />
+                        <Navbar className="p-[22px_42px] !border-b-0" mainClass="flex-row-reverse" subClass="flex-row-reverse !justify-end gap-14" />
 
                         {children}
 
-                        <div className="w-full h-[109px] flex items-center justify-center pl-[303.5px] pr-[66px] -mb-[5px]">
-                            <svg width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M87.6719 0H949V109H0.5L87.6719 0Z" fill="black" />
+                        <div className="w-full h-[109px] flex items-center justify-center pr-[303.5px] pl-[66px] -mb-[5px]">
+                            <svg width="100%" height="100%" viewBox="0 0 949 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M861.328 0H0V109H948.5L861.328 0Z" fill="black" />
                             </svg>
                             <div className="absolute flex items-center justify-center gap-8">
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,9 +79,9 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", style
                             </div>
                         </div>
                     </div>
-                        <MenuBar />
                 </div>
             </div>
+            {/* <MenuBar />s */}
         </div>
     );
 };
