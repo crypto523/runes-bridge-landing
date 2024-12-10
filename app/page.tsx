@@ -15,6 +15,7 @@ import Governance from "@/components/Sections/Governance";
 import RBVToken from "@/components/Sections/RBCToken";
 import Welcome from "@/components/Sections/Welcome";
 import Airdrop from "@/components/Sections/Airdrop";
+import Bridge from "@/components/Sections/Bridge";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -74,6 +75,7 @@ export default function Home() {
       <Welcome />
       <Airdrop />
       <Features />
+      <Bridge />
       <Staking />
       <Governance />
       <RBVToken />

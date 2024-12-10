@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
-const Planet: React.FC = () => {
+interface PlanetProps {
+  class?: string;
+}
+
+const Planet: React.FC<PlanetProps> = (props) => {
   useEffect(() => {
     gsap
       .timeline()
@@ -65,7 +69,7 @@ const Planet: React.FC = () => {
 
   return (
     <div
-      className="flex items-center justify-center opacity-0 translate-y-[200px]"
+      className={`flex items-center justify-center ${props.class ? props.class : 'opacity-0 translate-y-[200px]'}`}
       id="planet"
     >
       <div className="relative w-[658px] h-[478px] ">
