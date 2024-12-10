@@ -23,9 +23,16 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(TextPlugin);
 }
 
+type Section = "HERO" | "LABS" | "WELCOME" | "AIRDROP" | "FEATURE" | "BRIDGE" | "STAKING" | "GOVERNANCE" | "TASKBOARD" | "RBV" | "NONE"
+
 export default function Home() {
   const [preloading, setPreloading] = useState<boolean>(true);
   const [vLoading, setVLoading] = useState<boolean>(false);
+  const [currentSection, setCurrentSection] = useState<Section>("NONE");
+
+  const changeSection = (section: Section) => {
+    setCurrentSection(section);
+  }
 
   const onFinishPreloading = () => {
     setPreloading(false);
@@ -33,6 +40,8 @@ export default function Home() {
   };
 
   const onFinishV = () => {
+    setCurrentSection("HERO");
+    
     const tl = gsap.timeline();
     tl.to("div#landingv", {
       opacity: 0,
@@ -40,47 +49,21 @@ export default function Home() {
       onComplete: () => {
         setVLoading(false);
       },
-    })
-      .to(
-        "div#banner",
-        {
-          opacity: 1,
-          translateY: 0,
-          duration: 2,
-        },
-        "<"
-      )
-      .to(
-        "div#hero-buttons",
-        {
-          opacity: 1,
-          duration: 2,
-        },
-        "<"
-      )
-      .to(
-        "div#planet",
-        {
-          opacity: 1,
-          duration: 2,
-          translateY: 0,
-        },
-        "<"
-      )
+    });
   };
 
   return (
     <main className="relative w-full">
-      <Hero />
-      <CTOLabs />
-      <Welcome />
-      <Airdrop />
-      <Features />
-      <Bridge />
-      <Staking />
-      <Governance />
-      <Taskboard />
-      <RBVToken />
+      {currentSection === "HERO" && <Hero />}
+      {currentSection === "LABS" && <CTOLabs />}
+      {currentSection === "WELCOME" && <Welcome />}
+      {currentSection === "AIRDROP" && <Airdrop />}
+      {currentSection === "FEATURE" && <Features />}
+      {currentSection === "BRIDGE" && <Bridge />}
+      {currentSection === "STAKING" && <Staking />}
+      {currentSection === "GOVERNANCE" && <Governance />}
+      {currentSection === "TASKBOARD" && <Taskboard />}
+      {currentSection === "RBV" && <RBVToken />}
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}

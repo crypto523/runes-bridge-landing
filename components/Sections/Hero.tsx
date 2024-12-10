@@ -1,15 +1,46 @@
 'use client'
 
-import React from "react"
+import React, { useEffect } from "react"
 import Navbar from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
 import RunesButton from "../utils/Button";
 import Planet from "../Planet/Planet";
+import gsap from "gsap";
 
 const Hero: React.FC = () => {
+    useEffect(() => {
+        const animation = gsap.timeline();
+        animation
+            .to(
+                "div#banner",
+                {
+                    opacity: 1,
+                    translateY: 0,
+                    duration: 2,
+                },
+                "<"
+            )
+            .to(
+                "div#hero-buttons",
+                {
+                    opacity: 1,
+                    duration: 2,
+                },
+                "<"
+            )
+            .to(
+                "div#planet",
+                {
+                    opacity: 1,
+                    duration: 2,
+                    translateY: 0,
+                },
+                "<"
+            )
+    })
 
     return (
-        <section className="w-full h-full" id="hero" style={{backgroundImage: `url("bg-grid.svg")`}}>
+        <section className="w-full h-full" id="hero" style={{ backgroundImage: `url("bg-grid.svg")` }}>
             <Navbar />
             <Banner />
 

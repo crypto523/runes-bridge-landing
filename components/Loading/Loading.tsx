@@ -27,7 +27,7 @@ const Loading: React.FC<LoadingProps> = ({ onFinishLoading }) => {
     });
 
     return (
-        <div className="absolute inset-0 bg-black flex flex-col items-center justify-center">
+        <div className="absolute top-0 left-0 right-0 h-[100vh] bg-black flex flex-col items-center justify-center">
             <div className="relative w-[100px] h-[100px] flex" id="loadingbar">
                 <div className="absolute bottom-0 right-0 w-[50px] h-[20px] bg-white opacity-0"></div>
                 <div className="absolute bottom-0 right-[50px] w-[30px] h-[20px] bg-white opacity-0"></div>

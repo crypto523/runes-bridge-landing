@@ -27,7 +27,7 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
   });
 
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center bg-white" id="landingv" style={{backgroundImage: `url("bg-grid.svg")`}}>
+    <div className="absolute top-0 left-0 right-0 h-[100vh] flex flex-col items-center justify-center bg-white" id="landingv" style={{backgroundImage: `url("bg-grid.svg")`}}>
       <Image src="/mask.png" width={304} height={228} alt="v-mask" priority />
       <div className="max-w-[500px]">
         <h5
