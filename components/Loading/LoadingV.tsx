@@ -19,7 +19,6 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
     }).to("p#v-welcome", {
         opacity: 1,
         duration: 2,
-        transformOrigin: "top center",
         onComplete: () =>{
             onFinishV();
         }   
@@ -27,15 +26,15 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
   });
 
   return (
-    <div className="absolute top-0 left-0 right-0 h-[100vh] flex flex-col items-center justify-center bg-white" id="landingv" style={{backgroundImage: `url("bg-grid.svg")`}}>
+    <div className="absolute top-0 w-[100vw] h-[100vh] flex flex-col items-center justify-center bg-white" id="landingv" style={{backgroundImage: `url("bg-grid.svg")`}}>
       <Image src="/mask.png" width={304} height={228} alt="v-mask" priority />
-      <div className="max-w-[500px]">
+      <div className="w-full max-w-[482px] p-2">
         <h5
           className="h-[86px] font-inter text-[#061012] text-center font-[600] text-[24px] leading-[86px]"
           id="v-welcome"
         ></h5>
         <p
-          className="w-[466px] font-poppins font-[500] text-[16px] leading-[19.36px] text-[#444444] text-center"
+          className="w-full font-poppins font-[500] text-[16px] leading-[19.36px] text-[#444444] text-center"
           id="v-welcome"
           style={{opacity: 0}}
         >
