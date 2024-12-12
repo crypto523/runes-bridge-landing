@@ -11,7 +11,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ className, mainClass, subClass, onLogoClick }) => {
-    const defaultClasses = "w-full p-[40px_165px] border-b-2 border-[#C4C3CB]";
+    const defaultClasses = "w-full p-5 lg:p-[40px_165px] lg:border-b-2 lg:border-[#C4C3CB]";
 
     return (
         <div className={classNames(defaultClasses, className)}>
@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, mainClass, subClass, onLogoC
                         Beta
                     </p>
                 </div>
-                <div className={classNames("w-1/2 flex items-center justify-between", subClass)}>
+                <div className={classNames("hidden w-1/2 lg:flex items-center justify-between", subClass)}>
                     <div className="flex items-center gap-[20px]">
                         <svg
                             className="cursor-pointer"

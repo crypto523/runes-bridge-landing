@@ -13,12 +13,13 @@ const Planet: React.FC<PlanetProps> = (props) => {
       .fromTo(
         "#eth",
         {
-          top: 24,
-          right: 125,
+          top: "3.64%",
+          right: "21.5%",
+          translateX: "50%"
         },
         {
-          top: 400,
-          right: 520,
+          top: "80%",
+          right: "80.6%",
           duration: 3,
           repeat: -1,
           yoyo: true,
@@ -28,12 +29,12 @@ const Planet: React.FC<PlanetProps> = (props) => {
       .fromTo(
         "#sol",
         {
-          top: 40,
-          left: 95,
+          top: "10%",
+          left: "16%",
         },
         {
-          top: 400,
-          left: 470,
+          top: "90%",
+          left: "75%",
           duration: 3,
           repeat: -1,
           yoyo: true,
@@ -44,10 +45,12 @@ const Planet: React.FC<PlanetProps> = (props) => {
       .fromTo(
         "#bitcoin",
         {
-          right: 580
+          top: "50%",
+          translateY: "-50%",
+          right: "90%"
         },
         {
-          right: 40,
+          right: "5%",
           duration: 3,
           repeat: -1,
           yoyo: true,
@@ -69,10 +72,10 @@ const Planet: React.FC<PlanetProps> = (props) => {
 
   return (
     <div
-      className={`flex items-center justify-center ${props.class ? props.class : 'opacity-0 translate-y-[200px]'}`}
+      className={`flex items-center justify-center p-3 ${props.class ? props.class : 'opacity-0 translate-y-[200px]'}`}
       id="planet"
     >
-      <div className="relative w-[658px] h-[478px] ">
+      <div className="relative lg:w-[658px] lg:h-[478px] ">
         <Image
           src="/planet.png"
           width={658}
@@ -86,7 +89,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
           width={45}
           height={45}
           alt="ETH"
-          className="absolute top-[24px] right-[125px] "
+          className="absolute w-[25px] h-[25px] lg:w-[45px] lg:h-[45px]"
         />
         <Image
           src="/SOL.svg"
@@ -94,7 +97,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
           width={45}
           height={45}
           alt="ETH"
-          className="absolute top-[400px] left-[470px] "
+          className="absolute w-[25px] h-[25px] lg:w-[45px] lg:h-[45px]"
         />
         <Image
           src="/BIT.svg"
@@ -102,7 +105,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
           width={45}
           height={45}
           alt="ETH"
-          className="absolute top-[218px] right-[580px] "
+          className="absolute w-[25px] h-[25px] lg:w-[45px] lg:h-[45px]"
         />
         <Image
           src="/logo.svg"
@@ -110,7 +113,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
           width={60}
           height={60}
           alt="logo"
-          className="absolute top-[75px] right-[310px] "
+          className="absolute top-[12%] right-[47%]"
         />
         <Image
           src="/logo.svg"
@@ -118,7 +121,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
           width={50}
           height={50}
           alt="logo"
-          className="absolute bottom-[35px] right-[310px] "
+          className="absolute bottom-[12%] right-[47%] "
         />
       </div>
     </div>
