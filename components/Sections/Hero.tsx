@@ -59,7 +59,7 @@ const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
     return (
         <section className="absolute top-0 w-[100vw] h-[100vh]" id="hero" style={{ backgroundImage: `url("bg-grid.svg")`, zIndex: 100 }}>
             <div id="up">
-                <Navbar />
+                <Navbar onLogoClick={() => {}} />
                 <Banner />
 
                 <div className="flex items-center justify-center gap-[16px] mt-[40px] opacity-0" id="hero-buttons">

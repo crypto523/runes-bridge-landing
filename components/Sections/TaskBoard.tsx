@@ -10,7 +10,7 @@ interface TaskboardProps {
 const Taskboard: React.FC<TaskboardProps> = ({ showSection, hideSection }) => {
     return (
         <div id="taskboard" className="absolute top-0 w-[100vw] h-[100vh]">
-            <SectionLayoutF currentSection="TASKBOARD" nextSection="RBV" showSection={showSection} hideSectioin={hideSection}>
+            <SectionLayoutF currentSection="TASKBOARD" nextSection="RBV" showSection={showSection} hideSection={hideSection}>
                 <div className="w-full flex-1 flex items-center justify-around">
                     <div className="max-w-[531px] flex flex-col gap-2.5">
                         <h2 className="font-poppins font-[600] text-[40px] leading-[86px] text-[#061012]">

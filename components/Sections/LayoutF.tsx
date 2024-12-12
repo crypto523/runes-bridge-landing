@@ -9,7 +9,7 @@ interface LayoutProps {
     children: ReactNode;
     className?: string;
     currentSection: Section;
-    hideSectioin: (section: Section) => void;
+    hideSection: (section: Section) => void;
     nextSection: Section;
     showSection: (section: Section) => void;
 }
@@ -19,7 +19,7 @@ type Dimensions = {
     height: number;
 };
 
-const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", currentSection, hideSectioin, nextSection, showSection }) => {
+const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", currentSection, hideSection, nextSection, showSection }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [dimensions, setDimensions] = useState<Dimensions>({ width: window.innerWidth - 120, height: window.innerHeight - 120 });
 
@@ -37,6 +37,11 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", curre
 
         return () => window.removeEventListener('resize', updateDimensions);
     }, []);
+
+    const showHero = () => {
+        hideSection(currentSection);
+        showSection("HERO");
+    }
 
     return (
         <div className={`w-full h-full p-[30px_60px] overflow-hidden ${className}`}>
@@ -87,7 +92,7 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", curre
                                 <path d="M5 17H19M5 12H19M5 7H13" stroke="#626262" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
-                        <div className="pb-[30px] w-full flex flex-col items-center cursor-pointer" onClick={() => { hideSectioin(currentSection); showSection(nextSection) }}>
+                        <div className="pb-[30px] w-full flex flex-col items-center cursor-pointer" onClick={() => { hideSection(currentSection); showSection(nextSection) }}>
                             <div className="w-[90px] pr-[180px] font-conthrax font-600 text-[10px] leading-[12px] text-[#000000] whitespace-nowrap rotate-90 ">explore more</div>
                             <div className="">
                                 <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +102,7 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", curre
                         </div>
                     </div>
                     <div className="w-full h-full flex flex-col items-center justify-between">
-                        <Navbar className="!px-[44px] !py-[2vh] !border-b-0" mainClass="flex-row-reverse" subClass="flex-row-reverse !justify-end gap-14" />
+                        <Navbar className="!px-[44px] !py-[2vh] !border-b-0" mainClass="flex-row-reverse" subClass="flex-row-reverse !justify-end gap-14" onLogoClick={showHero} />
 
                         {children}
 

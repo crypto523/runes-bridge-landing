@@ -38,6 +38,11 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", curren
         return () => window.removeEventListener('resize', updateDimensions);
     }, []);
 
+    const showHero = () => {
+        hideSection(currentSection);
+        showSection("HERO");
+    }
+
     return (
         <div className={`w-full h-full p-[40px_60px] overflow-hidden ${className}`}>
             <div ref={containerRef} className="relative w-full h-full">
@@ -98,7 +103,7 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", curren
                         </div>
                     </div>
                     <div className="w-full h-full flex flex-col items-center">
-                        <Navbar className="!px-[44px] !py-[3vh] !border-b-0" subClass="!justify-end gap-14" />
+                        <Navbar className="!px-[44px] !py-[3vh] !border-b-0" subClass="!justify-end gap-14" onLogoClick={showHero} />
 
                         {children}
 

@@ -15,7 +15,7 @@ const Welcome: React.FC<WelcomeProps> = ({showSection, hideSection}) => {
 
     return (
         <div id="welcome" className="absolute top-0 w-[100vw] h-[100vh]">
-            <SectionLayoutF currentSection="WELCOME" nextSection="FEATURE" hideSectioin={hideSection} showSection={showSection}>
+            <SectionLayoutF currentSection="WELCOME" nextSection="FEATURE" hideSection={hideSection} showSection={showSection}>
                 <div className="w-full flex-1 flex flex-col items-center justify-evenly px-[5vw]">
                     <div className="w-full flex flex-col items-end">
                         <h2 className="font-poppins font-[600] text-[48px] mb-[3vh] mt-[0] text-center text-[#061012]">V says welcome home</h2>

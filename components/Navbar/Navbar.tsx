@@ -7,15 +7,16 @@ interface NavbarProps {
     className?: string; // Add a className prop for customization
     mainClass?: string;
     subClass?: string;
+    onLogoClick: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ className, mainClass, subClass }) => {
+const Navbar: React.FC<NavbarProps> = ({ className, mainClass, subClass, onLogoClick }) => {
     const defaultClasses = "w-full p-[40px_165px] border-b-2 border-[#C4C3CB]";
 
     return (
         <div className={classNames(defaultClasses, className)}>
             <div className={classNames("flex items-center justify-between", mainClass)}>
-                <div className="flex items-center cursor-pointer">
+                <div className="flex items-center cursor-pointer" onClick={onLogoClick}>
                     <p className="font-conthrax font-[600] text-[20px] leading-[24px] text-[#061012]">
                         RunesBridge
                     </p>

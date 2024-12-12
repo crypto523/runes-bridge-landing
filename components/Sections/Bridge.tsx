@@ -11,7 +11,7 @@ interface BridgeProps {
 const Bridge: React.FC<BridgeProps> = ({ showSection, hideSection }) => {
   return (
     <div id="bridge" className="absolute top-0 w-[100vw] h-[100vh]">
-      <SectionLayoutF currentSection="BRIDGE" nextSection="GOVERNANCE" showSection={showSection} hideSectioin={hideSection}>
+      <SectionLayoutF currentSection="BRIDGE" nextSection="GOVERNANCE" showSection={showSection} hideSection={hideSection}>
         <div className="w-full flex-1 flex items-center justify-around">
           <div className="max-w-[504px] flex flex-col">
             <h2 className="font-poppins font-[600] text-[40px] leading-[86px] text-[#061012]">

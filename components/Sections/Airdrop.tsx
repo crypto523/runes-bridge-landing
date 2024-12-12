@@ -11,7 +11,7 @@ const Airdrop: React.FC<AirdropProps> = ({showSection, hideSection}) => {
 
     return (
         <div id="airdrop" className="absolute top-0 w-[100vw] h-[100vh]">
-            <SectionLayoutF currentSection="AIRDROP" nextSection="STAKING" showSection={showSection} hideSectioin={hideSection}>
+            <SectionLayoutF currentSection="AIRDROP" nextSection="STAKING" showSection={showSection} hideSection={hideSection}>
                 <div className="w-full flex-1 flex items-center justify-around">
                     <p className="max-w-[504px] text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">
                         This is a facility designed to reward RBV holders with tokens “Powered by RunesBridge-V”. <br />
