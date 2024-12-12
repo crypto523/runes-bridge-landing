@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/all";
@@ -12,7 +12,7 @@ import CTOLabs from "@/components/Sections/CTOLabs";
 import Features from "@/components/Sections/Features";
 import Staking from "@/components/Sections/Staking";
 import Governance from "@/components/Sections/Governance";
-import RBVToken from "@/components/Sections/RBCToken";
+import RBVToken from "@/components/Sections/RBVToken";
 import Welcome from "@/components/Sections/Welcome";
 import Airdrop from "@/components/Sections/Airdrop";
 import Bridge from "@/components/Sections/Bridge";
@@ -23,16 +23,20 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(TextPlugin);
 }
 
-type Section = "HERO" | "LABS" | "WELCOME" | "AIRDROP" | "FEATURE" | "BRIDGE" | "STAKING" | "GOVERNANCE" | "TASKBOARD" | "RBV" | "NONE"
+export type Section = "HERO" | "LABS" | "WELCOME" | "AIRDROP" | "FEATURE" | "BRIDGE" | "STAKING" | "GOVERNANCE" | "TASKBOARD" | "RBV" | "NONE"
 
 export default function Home() {
   const [preloading, setPreloading] = useState<boolean>(true);
   const [vLoading, setVLoading] = useState<boolean>(false);
-  const [currentSection, setCurrentSection] = useState<Section>("NONE");
+  const [viewSection, setViewSection] = useState<Section[]>([]);
 
-  const changeSection = (section: Section) => {
-    setCurrentSection(section);
+  const showSection = (section: Section) => {
+    setViewSection(prevViewSection => [...prevViewSection, section]);
   }
+
+  const hideSection = (section: Section) => {
+    setViewSection(prevViewSection => prevViewSection.filter(s => s !== section));
+  };
 
   const onFinishPreloading = () => {
     setPreloading(false);
@@ -40,30 +44,30 @@ export default function Home() {
   };
 
   const onFinishV = () => {
-    setCurrentSection("HERO");
-
+    
     const tl = gsap.timeline();
     tl.to("div#landingv", {
       opacity: 0,
       duration: 2,
       onComplete: () => {
         setVLoading(false);
+        showSection("HERO");
       },
     });
   };
 
   return (
     <main className="relative w-full">
-      {currentSection === "HERO" && <Hero />}
-      {currentSection === "HERO" && <CTOLabs />}
-      {currentSection === "HERO" && <Welcome />}
-      {currentSection === "HERO" && <Airdrop />}
-      {currentSection === "HERO" && <Features />}
-      {currentSection === "HERO" && <Bridge />}
-      {currentSection === "HERO" && <Staking />}
-      {currentSection === "HERO" && <Governance />}
-      {currentSection === "HERO" && <Taskboard />}
-      {currentSection === "HERO" && <RBVToken />}
+      {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
+      {viewSection.includes("LABS") && <CTOLabs showSection={showSection} />}
+      {viewSection.includes("WELCOME") && <Welcome />}
+      {viewSection.includes("FEATURE") && <Features showSection={showSection} />}
+      {viewSection.includes("AIRDROP") && <Airdrop />}
+      {viewSection.includes("STAKING") && <Staking showSection={showSection} />}
+      {viewSection.includes("BRIDGE") && <Bridge />}
+      {viewSection.includes("GOVERNANCE") && <Governance showSection={showSection} />}
+      {viewSection.includes("TASKBOARD") && <Taskboard />}
+      {viewSection.includes("RBV") && <RBVToken showSection={showSection} />}
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}

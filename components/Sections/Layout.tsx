@@ -1,29 +1,92 @@
-import React, { ReactNode, CSSProperties } from "react";
+import React, { ReactNode, CSSProperties, useRef, useState, useEffect } from "react";
 
 import Image from "next/image";
 import Navbar from "../Navbar/Navbar";
 import MenuBar from "../utils/MenuBar";
+import { Section } from "@/app/page";
 
 interface LayoutProps {
     children: ReactNode; // Children to render inside the layout
     className?: string; // Optional custom CSS class
-    style?: CSSProperties; // Optional inline styles
+    id?: string;
+    nextSection: Section;
+    showSection: (section: Section) => void;
 }
 
-const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", style }) => {
+type Dimensions = {
+    width: number;
+    height: number;
+};
+
+const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", id, nextSection, showSection }) => {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const [dimensions, setDimensions] = useState<Dimensions>({ width: window.innerWidth - 120, height: window.innerHeight - 120 });
+
+    useEffect(() => {
+        const updateDimensions = () => {
+            if (containerRef.current) {
+                const rect = containerRef.current.getBoundingClientRect();
+                setDimensions({ width: rect.width, height: rect.height });
+            }
+        };
+
+        // Calculate dimensions on mount and resize
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
+
+        return () => window.removeEventListener('resize', updateDimensions);
+    }, []);
+
     return (
-        <div className={`relative w-full p-[60px_60px] overflow-hidden ${className}`} style={style}>
-            <div className="relative w-full h-full">
-                <Image src="/section-bg.svg" width={1318} height={793} alt="section" className="relative z-10" style={{ width: "100%", objectFit: "cover" }} />
-                <Image src="/vector1.svg" width={50} height={1050} alt="vector1" className="absolute right-0 top-[50%] -z-0" />
-                <div className="absolute inset-0 w-full h-full flex z-10">
+        <div className={`w-full h-full p-[40px_60px] overflow-hidden ${className}`} id={id}>
+            <div ref={containerRef} className="relative w-full h-full">
+
+                <svg width="100%" height="100%" className="z-10" xmlns="http://www.w3.org/2000/svg">
+                    <polygon
+                        points={`
+                                0,${dimensions.height} 
+                                0,${dimensions.width * 0.02}
+                                ${dimensions.width * 0.02},0
+                                ${dimensions.width * 0.5},0
+                                ${dimensions.width * 0.6},${dimensions.height * 0.2}
+                                ${dimensions.width * 0.98},${dimensions.height * 0.2}
+                                ${dimensions.width},${dimensions.height * 0.2 + dimensions.width * 0.02}
+                                ${dimensions.width},${dimensions.height * 0.9 - dimensions.width * 0.02}
+                                ${dimensions.width * 0.98},${dimensions.height * 0.9}
+                                ${dimensions.width * 0.3},${dimensions.height * 0.9}
+                                ${dimensions.width * 0.25},${dimensions.height}
+                                0,${dimensions.height}
+                                `}
+                        fill="white"
+                        stroke="none"
+                    // strokeWidth="1.5"
+                    // vectorEffect="non-scaling-stroke"
+                    />
+                </svg>
+                <svg width="100%" height="101%" className="absolute top-0 z-20" xmlns="http://www.w3.org/2000/svg">
+                    <line x1={0} y1={dimensions.height} x2={0} y2={dimensions.width * 0.02} stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                    <line x1={0} y1={dimensions.width * 0.02} x2={dimensions.width * 0.02} y2={0} stroke="#444444" strokeWidth={0.7} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.02} y1={0} x2={dimensions.width * 0.5} y2={0} stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.5} y1={0} x2={dimensions.width * 0.55} y2={dimensions.height * 0.15} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.55} y1={dimensions.height * 0.15} x2={dimensions.width * 0.98} y2={dimensions.height * 0.15} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.98} y1={dimensions.height * 0.15} x2={dimensions.width} y2={dimensions.height * 0.15 + dimensions.width * 0.02} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width} y1={dimensions.height * 0.15 + dimensions.width * 0.02} x2={dimensions.width} y2={dimensions.height * 0.9 - dimensions.width * 0.02} stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width} y1={dimensions.height * 0.9 - dimensions.width * 0.02} x2={dimensions.width * 0.98} y2={dimensions.height * 0.9} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.98} y1={dimensions.height * 0.9} x2={dimensions.width * 0.3} y2={dimensions.height * 0.9} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.3} y1={dimensions.height * 0.9} x2={dimensions.width * 0.25} y2={dimensions.height} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={0} y1={dimensions.height} x2={dimensions.width * 0.25} y2={dimensions.height} stroke="#444444" strokeWidth={1.5} />
+                    <polygon points={`${dimensions.width*0.25+dimensions.height*0.01},${dimensions.height*1.01} ${dimensions.width*0.3+dimensions.height*0.01},${dimensions.height*0.91} ${dimensions.width*0.95},${dimensions.height*0.91} ${dimensions.width*0.95},${dimensions.height*1.01}`} fill="black" />
+                </svg>
+
+                <Image src="/vector1.svg" width={50} height={1050} alt="vector1" className="absolute right-0 top-[50%] -z-10" />
+                <div className="absolute inset-0 w-full h-full flex z-20">
                     <div className="w-[4.55%] h-full flex flex-col items-center justify-between border-[#626262] border-r-[1px] ">
                         <div className="pt-[65%] cursor-pointer">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 17H19M5 12H19M5 7H13" stroke="#626262" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
-                        <div className="pb-[30px] w-full flex flex-col items-center cursor-pointer">
+                        <div className="pb-[30px] w-full flex flex-col items-center cursor-pointer" onClick={() => showSection(nextSection)}>
                             <div className="w-[90px] pr-[180px] font-conthrax font-600 text-[10px] leading-[12px] text-[#000000] whitespace-nowrap rotate-90 ">explore more</div>
                             <div className="">
                                 <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,15 +95,12 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", style 
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-full flex flex-col items-center justify-between">
-                        <Navbar className="p-[22px_42px] !border-b-0" subClass="!justify-end gap-14" />
+                    <div className="w-full h-full flex flex-col items-center">
+                        <Navbar className="!px-[44px] !py-[3vh] !border-b-0" subClass="!justify-end gap-14" />
 
                         {children}
 
-                        <div className="w-full h-[109px] flex items-center justify-center pl-[303.5px] pr-[66px] -mb-[5px]">
-                            <svg width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M87.6719 0H949V109H0.5L87.6719 0Z" fill="black" />
-                            </svg>
+                        <div className="w-full h-[9vh] flex items-center justify-center pl-[303.5px] pr-[66px] -mb-[5px]">
                             <div className="absolute flex items-center justify-center gap-8">
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="30" cy="30" r="30" fill="white" />

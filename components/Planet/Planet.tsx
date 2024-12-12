@@ -39,7 +39,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
           yoyo: true,
           ease: "none",
         },
-        "-=1"
+        "-=5"
       )
       .fromTo(
         "#bitcoin",
@@ -53,7 +53,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
           yoyo: true,
           ease: "none",
         },
-        "-=1"
+        "-=5"
       )
       .fromTo("#logop", {
         scale: 0,
@@ -61,7 +61,7 @@ const Planet: React.FC<PlanetProps> = (props) => {
       }, {
         scale: 1.5,
         opacity: 0.7,
-        duration: 2,
+        duration: 3,
         repeat: -1,
         ease: "none"
       }, 0);

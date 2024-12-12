@@ -4,11 +4,16 @@ import UpBox from "../utils/UpBox";
 import { ColorSquareFrameIcon, ColorSquareIcon, FormatSpuareIcon, FormatSquareFrameIcon, HierarchyIcon, MoneyReceiveFrameIcon, MoneyReceiveIcon, PeopleFrameIcon, PeopleIcon } from "../utils/Icons";
 import { contents, titles } from "../utils/constants";
 import DownBox from "../utils/DownBox";
+import { Section } from "@/app/page";
 
-const Features: React.FC = () => {
+interface FeaturesProps {
+    showSection: (section: Section) => void;
+}
+
+const Features: React.FC<FeaturesProps> = ({showSection}) => {
 
     return (
-        <SectionLayout>
+        <SectionLayout id="features" showSection={showSection} nextSection="AIRDROP" >
             <div className="w-full h-full flex flex-col items-start gap-[25px] pb-[18px]">
                 <div className="flex gap-[18px] px-[47px]">
                     <div className="table-cell">

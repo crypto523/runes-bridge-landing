@@ -7,12 +7,11 @@ import MenuBar from "../utils/MenuBar";
 interface LayoutProps {
     children: ReactNode; // Children to render inside the layout
     className?: string; // Optional custom CSS class
-    style?: CSSProperties; // Optional inline styles
 }
 
-const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", style }) => {
+const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "" }) => {
     return (
-        <div className={`relative w-full p-[60px_60px] overflow-hidden ${className}`} style={style}>
+        <div className={`relative w-full p-[60px_60px] overflow-hidden ${className}`}>
             <div className="relative w-full h-full">
                 <Image src="/sectionf-bg.svg" width={1318} height={793} alt="section" className="relative z-10" style={{ width: "100%", objectFit: "cover" }} />
                 <Image src="/vector1.svg" width={50} height={1050} alt="vector1" className="absolute left-0 top-[50%] -z-0" />

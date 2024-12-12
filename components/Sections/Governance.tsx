@@ -2,11 +2,16 @@ import React from "react";
 import Image from "next/image";
 
 import SectionLayout from "./Layout";
+import { Section } from "@/app/page";
 
-const Governance: React.FC = () => {
+interface GovernanceProps {
+    showSection: (section: Section) => void;
+}
+
+const Governance: React.FC<GovernanceProps> = ({showSection}) => {
 
     return (
-        <SectionLayout>
+        <SectionLayout id="governance" showSection={showSection} nextSection="TASKBOARD">
             <div className="w-full h-full flex items-center justify-between px-[45px]">
                 <div className="max-w-[500px] w-full h-full flex flex-col items-center justify-start gap-4">
                     <div className="flex flex-col items-start gap-[10px]">

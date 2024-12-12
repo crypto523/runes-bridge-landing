@@ -1,10 +1,15 @@
 import React from "react";
 import SectionLayout from "./Layout";
+import { Section } from "@/app/page";
 
-const RBVToken: React.FC = () => {
+interface RBVTokenProps {
+    showSection: (section: Section) => void;
+}
+
+const RBVToken: React.FC<RBVTokenProps> = ({showSection}) => {
 
     return (
-        <SectionLayout>
+        <SectionLayout id="rbv" showSection={showSection} nextSection="HERO">
             <div className="max-w-[1028px] w-full h-full flex flex-col items-center justify-center">
                 <h2 className="font-poppins font-[600] text-[48px] text-[#061012] py-[24px]">RBV Token</h2>
                 <div className="w-full flex items-center font-poppins font-[500] text-[24px] text-[#666666] border-[#C4C3CB] border-b-[0.8px]">

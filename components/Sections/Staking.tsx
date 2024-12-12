@@ -2,11 +2,16 @@ import React from "react";
 import Image from "next/image";
 
 import SectionLayout from "./Layout";
+import { Section } from "@/app/page";
 
-const Staking: React.FC = () => {
+interface StakingProps {
+    showSection: (section: Section) => void;
+}
+
+const Staking: React.FC<StakingProps> = ({showSection}) => {
 
     return (
-        <SectionLayout>
+        <SectionLayout id="staking" showSection={showSection} nextSection="BRIDGE">
             <div className="w-full h-full flex items-center justify-between px-[100px]">
                 <Image src="/chain.svg" width={382} height={420} alt="chain" style={{height: "auto"}} />
                 <div className="flex flex-col items-start gap-[10px] max-w-[504px]">
