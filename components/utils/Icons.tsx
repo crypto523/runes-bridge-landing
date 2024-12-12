@@ -274,7 +274,7 @@ export const PeopleFrameIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) 
 
 import Image from "next/image";
 export const WideDistributionIcon: React.FC = (props) => (
-    <Image src="/wide.svg" width={110} height={110} alt="wide" />
+    <Image src="/wide.svg" width={110} height={110} style={{height: "10vh", width: "auto"}} alt="wide" />
 )
 
 export const ShieldIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (

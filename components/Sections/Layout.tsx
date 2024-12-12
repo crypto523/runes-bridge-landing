@@ -6,9 +6,10 @@ import MenuBar from "../utils/MenuBar";
 import { Section } from "@/app/page";
 
 interface LayoutProps {
-    children: ReactNode; // Children to render inside the layout
-    className?: string; // Optional custom CSS class
-    id?: string;
+    children: ReactNode;
+    className?: string;
+    currentSection: Section;
+    hideSection: (section: Section) => void;
     nextSection: Section;
     showSection: (section: Section) => void;
 }
@@ -18,7 +19,7 @@ type Dimensions = {
     height: number;
 };
 
-const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", id, nextSection, showSection }) => {
+const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", currentSection, hideSection, nextSection, showSection }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [dimensions, setDimensions] = useState<Dimensions>({ width: window.innerWidth - 120, height: window.innerHeight - 120 });
 
@@ -38,7 +39,7 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", id, ne
     }, []);
 
     return (
-        <div className={`w-full h-full p-[40px_60px] overflow-hidden ${className}`} id={id}>
+        <div className={`w-full h-full p-[40px_60px] overflow-hidden ${className}`}>
             <div ref={containerRef} className="relative w-full h-full">
 
                 <svg width="100%" height="100%" className="z-10" xmlns="http://www.w3.org/2000/svg">
@@ -75,10 +76,11 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", id, ne
                     <line x1={dimensions.width * 0.98} y1={dimensions.height * 0.9} x2={dimensions.width * 0.3} y2={dimensions.height * 0.9} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
                     <line x1={dimensions.width * 0.3} y1={dimensions.height * 0.9} x2={dimensions.width * 0.25} y2={dimensions.height} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
                     <line x1={0} y1={dimensions.height} x2={dimensions.width * 0.25} y2={dimensions.height} stroke="#444444" strokeWidth={1.5} />
-                    <polygon points={`${dimensions.width*0.25+dimensions.height*0.01},${dimensions.height*1.01} ${dimensions.width*0.3+dimensions.height*0.01},${dimensions.height*0.91} ${dimensions.width*0.95},${dimensions.height*0.91} ${dimensions.width*0.95},${dimensions.height*1.01}`} fill="black" />
+                    <polygon points={`${dimensions.width * 0.25 + dimensions.height * 0.01},${dimensions.height * 1.01} ${dimensions.width * 0.3 + dimensions.height * 0.01},${dimensions.height * 0.91} ${dimensions.width * 0.95},${dimensions.height * 0.91} ${dimensions.width * 0.95},${dimensions.height * 1.01}`} fill="black" />
                 </svg>
 
                 <Image src="/vector1.svg" width={50} height={1050} alt="vector1" className="absolute right-0 top-[50%] -z-10" />
+                
                 <div className="absolute inset-0 w-full h-full flex z-20">
                     <div className="w-[4.55%] h-full flex flex-col items-center justify-between border-[#626262] border-r-[1px] ">
                         <div className="pt-[65%] cursor-pointer">
@@ -86,7 +88,7 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", id, ne
                                 <path d="M5 17H19M5 12H19M5 7H13" stroke="#626262" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
-                        <div className="pb-[30px] w-full flex flex-col items-center cursor-pointer" onClick={() => showSection(nextSection)}>
+                        <div className="pb-[30px] w-full flex flex-col items-center cursor-pointer" onClick={() => { hideSection(currentSection); showSection(nextSection) }}>
                             <div className="w-[90px] pr-[180px] font-conthrax font-600 text-[10px] leading-[12px] text-[#000000] whitespace-nowrap rotate-90 ">explore more</div>
                             <div className="">
                                 <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">

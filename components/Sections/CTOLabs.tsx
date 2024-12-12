@@ -6,9 +6,10 @@ import gsap from "gsap";
 
 interface CTOLabsProps {
   showSection: (section: Section) => void;
+  hideSection: (section: Section) => void;
 }
 
-const CTOLabs: React.FC<CTOLabsProps> = ({ showSection }) => {
+const CTOLabs: React.FC<CTOLabsProps> = ({ showSection, hideSection }) => {
 
   useEffect(() => {
     gsap.to("#labs", {opacity: 1})
@@ -16,7 +17,7 @@ const CTOLabs: React.FC<CTOLabsProps> = ({ showSection }) => {
 
   return (
     <div id="labs" className="absolute top-0 w-[100vw] h-[100vh]" style={{opacity: 0}}>
-      <SectionLayout showSection={showSection} nextSection="WELCOME">
+      <SectionLayout showSection={showSection} hideSection={hideSection} currentSection="LABS" nextSection="WELCOME">
         <div className="w-full flex-1 flex items-center justify-around">
           <Image
             src="/launch.gif"

@@ -6,12 +6,13 @@ import { Section } from "@/app/page";
 
 interface GovernanceProps {
     showSection: (section: Section) => void;
+    hideSection: (section: Section) => void;
 }
 
-const Governance: React.FC<GovernanceProps> = ({showSection}) => {
+const Governance: React.FC<GovernanceProps> = ({showSection, hideSection}) => {
 
     return (
-        <SectionLayout id="governance" showSection={showSection} nextSection="TASKBOARD">
+        <SectionLayout showSection={showSection} hideSection={hideSection} nextSection="TASKBOARD" currentSection="GOVERNANCE">
             <div className="w-full h-full flex items-center justify-between px-[45px]">
                 <div className="max-w-[500px] w-full h-full flex flex-col items-center justify-start gap-4">
                     <div className="flex flex-col items-start gap-[10px]">

@@ -59,15 +59,15 @@ export default function Home() {
   return (
     <main className="relative w-full">
       {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("LABS") && <CTOLabs showSection={showSection} />}
-      {viewSection.includes("WELCOME") && <Welcome />}
+      {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}
+      {viewSection.includes("WELCOME") && <Welcome showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("FEATURE") && <Features showSection={showSection} />}
       {viewSection.includes("AIRDROP") && <Airdrop />}
-      {viewSection.includes("STAKING") && <Staking showSection={showSection} />}
+      {viewSection.includes("STAKING") && <Staking showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("BRIDGE") && <Bridge />}
-      {viewSection.includes("GOVERNANCE") && <Governance showSection={showSection} />}
+      {viewSection.includes("GOVERNANCE") && <Governance showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("TASKBOARD") && <Taskboard />}
-      {viewSection.includes("RBV") && <RBVToken showSection={showSection} />}
+      {viewSection.includes("RBV") && <RBVToken showSection={showSection} hideSection={hideSection} />}
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}

@@ -6,12 +6,13 @@ import { Section } from "@/app/page";
 
 interface StakingProps {
     showSection: (section: Section) => void;
+    hideSection: (section: Section) => void;
 }
 
-const Staking: React.FC<StakingProps> = ({showSection}) => {
+const Staking: React.FC<StakingProps> = ({showSection, hideSection}) => {
 
     return (
-        <SectionLayout id="staking" showSection={showSection} nextSection="BRIDGE">
+        <SectionLayout showSection={showSection} nextSection="BRIDGE" currentSection="STAKING" hideSection={hideSection}>
             <div className="w-full h-full flex items-center justify-between px-[100px]">
                 <Image src="/chain.svg" width={382} height={420} alt="chain" style={{height: "auto"}} />
                 <div className="flex flex-col items-start gap-[10px] max-w-[504px]">
