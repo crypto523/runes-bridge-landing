@@ -27,7 +27,7 @@ const Bridge: React.FC<BridgeProps> = ({ showSection, hideSection }) => {
             </p>
           </div>
           <div className="h-[60vh] w-[60vh] flex items-center justify-center">
-            <Planet class="!opacity-1 translate-y-0 scale-75" />
+            <Planet class="!opacity-1 translate-y-0 scale-75 -z-10" />
           </div>
         </div>
       </SectionLayoutF>
