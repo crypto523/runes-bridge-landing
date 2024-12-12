@@ -8,34 +8,37 @@ import { Section } from "@/app/page";
 
 interface FeaturesProps {
     showSection: (section: Section) => void;
+    hideSection: (section: Section) => void;
 }
 
-const Features: React.FC<FeaturesProps> = ({showSection}) => {
+const Features: React.FC<FeaturesProps> = ({ showSection, hideSection }) => {
 
     return (
-        <SectionLayout id="features" showSection={showSection} nextSection="AIRDROP" >
-            <div className="w-full h-full flex flex-col items-start gap-[25px] pb-[18px]">
-                <div className="flex gap-[18px] px-[47px]">
-                    <div className="table-cell">
-                        <UpBox icon={FormatSpuareIcon} image={FormatSquareFrameIcon} title={titles.COMMUNITYBUILDING} content={contents.COMMUNITYBUILDING} />
+        <div id="features" className="absolute top-0 w-[100vw] h-[100vh]">
+            <SectionLayout showSection={showSection} nextSection="AIRDROP" hideSection={hideSection} currentSection="FEATURE">
+                <div className="w-full h-full flex-1 flex flex-col items-start justify-evenly">
+                    <div className="w-full flex gap-[1.8vw] px-[3vw]">
+                        <div className="table-cell">
+                            <UpBox icon={FormatSpuareIcon} image={FormatSquareFrameIcon} title={titles.COMMUNITYBUILDING} content={contents.COMMUNITYBUILDING} />
+                        </div>
+                        <div className="table-cell">
+                            <DownBox icon={ColorSquareIcon} image={ColorSquareFrameIcon} title={titles.INFRASTRUCTURETOOLS} content={contents.INFRASTRUCTURETOOLS} background="/infra_bg.svg" />
+                        </div>
                     </div>
-                    <div className="table-cell max-w-[295px]">
-                        <DownBox icon={ColorSquareIcon} image={ColorSquareFrameIcon} title={titles.INFRASTRUCTURETOOLS} content={contents.INFRASTRUCTURETOOLS} background="/infra_bg.svg" />
+                    <div className="w-full flex gap-[1.8vw] px-[3vw]">
+                        <div className="table-cell">
+                            <UpBox icon={MoneyReceiveIcon} image={MoneyReceiveFrameIcon} title={titles.FINANCIALSUPPORT} content={contents.FINANCIALSUPPORT} />
+                        </div>
+                        <div className="table-cell max-w-[263px]">
+                            <DownBox icon={HierarchyIcon} image={MoneyReceiveFrameIcon} title={titles.ADVISORYNETWORK} content={contents.ADVISORYNETWORK} />
+                        </div>
+                        <div className="table-cell flex-1">
+                            <UpBox icon={PeopleIcon} image={PeopleFrameIcon} title={titles.USERENGAGEMENT} content={contents.USERENGAGEMENT} />
+                        </div>
                     </div>
                 </div>
-                <div className="flex gap-[18px] px-[47px] w-full">
-                    <div className="table-cell">
-                        <UpBox icon={MoneyReceiveIcon} image={MoneyReceiveFrameIcon} title={titles.FINANCIALSUPPORT} content={contents.FINANCIALSUPPORT} />
-                    </div>
-                    <div className="table-cell max-w-[263px]">
-                        <DownBox icon={HierarchyIcon} image={MoneyReceiveFrameIcon} title={titles.ADVISORYNETWORK} content={contents.ADVISORYNETWORK} />
-                    </div>
-                    <div className="table-cell flex-1">
-                        <UpBox icon={PeopleIcon} image={PeopleFrameIcon} title={titles.USERENGAGEMENT} content={contents.USERENGAGEMENT} />
-                    </div>
-                </div>
-            </div>
-        </SectionLayout>
+            </SectionLayout>
+        </div>
     )
 }
 

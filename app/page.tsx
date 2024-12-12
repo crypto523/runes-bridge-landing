@@ -57,11 +57,11 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full">
+    <main className="relative w-full min-h-[100vh]">
       {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("WELCOME") && <Welcome showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("FEATURE") && <Features showSection={showSection} />}
+      {viewSection.includes("FEATURE") && <Features showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("AIRDROP") && <Airdrop />}
       {viewSection.includes("STAKING") && <Staking showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("BRIDGE") && <Bridge />}

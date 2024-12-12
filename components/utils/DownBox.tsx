@@ -12,16 +12,22 @@ interface DownBoxProps {
 const DownBox: React.FC<DownBoxProps> = (props) => {
 
     return (
-        <div className={`relative w-full h-full ${!props.background ? 'border-[1px] border-[#6262624D] bg-[#F6F5F54D]' : ''}`}>
-            {props.background && <Image src="/infra_bg.svg" width={295} height={225} alt="background" style={{height: "auto"}} />}
-            <div className={`flex flex-col p-5 ${props.background ? 'absolute top-0' : ''}`}>
-                <h6 className={`font-poppins font-[600] text-[24px] leading-[25px] text-[#061012] z-10 ${props.background ? 'max-w-[220px]' : ''}`}>{props.title}</h6>
-                <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-[#444444] mt-[15px] z-10">{props.content}</p>
-                <div className="flex items-center gap-[38px] mt-[10px] z-10">
+        <div className={`relative w-full h-full max-w-[340px] ${!props.background ? 'border-[1px] border-[#6262624D] bg-[#F6F5F54D]' : ''}`}>
+            <div className={`w-full h-full flex flex-col justify-evenly p-3`}>
+                <h6 className={`max-w-[200px] font-poppins font-[600] text-[3vh] leading-[3vh] text-[#061012] ${props.background ? '' : ''}`}>{props.title}</h6>
+                <p className="font-inter font-[500] text-[2.5vh] leading-[2.5vh] py-3 text-[#444444]">{props.content}</p>
+                <div className="flex items-center gap-[38px]">
                     <props.icon />
                     <props.image />
                 </div>
             </div>
+            {props.background && <svg width="100%" height="100%" style={{position: "absolute", top: 0, right: 0, left: 0, bottom: 1}} xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="80%" y2="0" stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                <line x1="80%" y1="0" x2="100%" y2="30%" stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                <line x1="100%" y1="30%" x2="100%" y2="100%" stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                <line x1="100%" y1="100%" x2="0" y2="100%" stroke="#444444" strokeWidth={1.8} vectorEffect="non-scaling-stroke" />
+                <line x1="0" y1="100%" x2="0" y2="0" stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+            </svg>}
         </div>
     )
 }
