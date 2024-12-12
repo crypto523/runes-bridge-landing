@@ -64,9 +64,9 @@ export default function Home() {
       {viewSection.includes("FEATURE") && <Features showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("AIRDROP") && <Airdrop showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("STAKING") && <Staking showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("BRIDGE") && <Bridge />}
+      {viewSection.includes("BRIDGE") && <Bridge showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("GOVERNANCE") && <Governance showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("TASKBOARD") && <Taskboard />}
+      {viewSection.includes("TASKBOARD") && <Taskboard showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("RBV") && <RBVToken showSection={showSection} hideSection={hideSection} />}
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
