@@ -62,7 +62,7 @@ export default function Home() {
       {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("WELCOME") && <Welcome showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("FEATURE") && <Features showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("AIRDROP") && <Airdrop />}
+      {viewSection.includes("AIRDROP") && <Airdrop showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("STAKING") && <Staking showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("BRIDGE") && <Bridge />}
       {viewSection.includes("GOVERNANCE") && <Governance showSection={showSection} hideSection={hideSection} />}
