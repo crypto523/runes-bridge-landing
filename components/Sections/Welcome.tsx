@@ -16,9 +16,9 @@ const Welcome: React.FC<WelcomeProps> = ({showSection, hideSection}) => {
     return (
         <div id="welcome" className="absolute top-0 w-[100vw] h-[100vh]">
             <SectionLayoutF currentSection="WELCOME" nextSection="FEATURE" hideSectioin={hideSection} showSection={showSection}>
-                <div className="w-full flex-1 flex flex-col items-center justify-evenly px-[56px]">
+                <div className="w-full flex-1 flex flex-col items-center justify-evenly px-[5vw]">
                     <div className="w-full flex flex-col items-end">
-                        <h2 className="font-poppins font-[600] text-[48px] mb-[4vh] mt-[0] text-center text-[#061012]">V says welcome home</h2>
+                        <h2 className="font-poppins font-[600] text-[48px] mb-[3vh] mt-[0] text-center text-[#061012]">V says welcome home</h2>
                         <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-[#444444] text-right">We welcome Community Take-Over projects—or really any project that wants our support to launch the right way. The first CTO projects will be launched between December 2024 and January 2025.</p>
                     </div>
                     <div className="w-full flex items-center justify-center gap-4">
@@ -27,7 +27,7 @@ const Welcome: React.FC<WelcomeProps> = ({showSection, hideSection}) => {
                         <div className="w-full h-full flex flex-col p-[2vh] border-[1px] border-[#6262624D] bg-[#F6F5F54D]">
                             <h6 className={`font-poppins font-[600] text-[24px] leading-[25px] text-[#061012] z-10`}>{titles.MARKETINGSUPPORT}</h6>
                             <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-[#444444] mt-[15px] z-10">{contents.MARKETINGSUPPORT}</p>
-                            <div className="w-full py-[3vh] flex items-center justify-end pr-10">
+                            <div className="w-full py-[2vh] flex items-center justify-end pr-10">
                                 <MoneyReceiveFrameIcon />
                             </div>
                             <div className="flex items-center gap-2 pl-5">
