@@ -75,7 +75,7 @@ export default function Home() {
       {viewSection.includes("RBV") && <RBVToken showSection={showSection} hideSection={hideSection} />}
 
       {viewSection.includes("HERO") && <div className="w-full px-8 py-[112px] flex flex-col items-center lg:hidden">
-        <div className="w-full">
+        <div className="w-full" id="launch">
           <h6 className="text-[#061012] font-[600] font-poppins text-[20px] leading-[30px] mb-[10px]">
             Launch a CTO <br /> &quot;Powered by RunesBridge-V&quot;
           </h6>
@@ -99,7 +99,7 @@ export default function Home() {
           style={{ width: "100%", height: "auto", objectFit: "contain" }}
         />
 
-        <div className="w-full flex flex-col items-end mt-36">
+        <div className="w-full flex flex-col items-end mt-36" id="welcome">
           <h2 className="font-poppins font-[600] text-[24px] text-right text-[#061012]">V says welcome home</h2>
           <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-[#444444] text-right mt-4">We welcome Community Take-Over projects—or really any project that wants our support to launch the right way. The first CTO projects will be launched between December 2024 and January 2025.</p>
         </div>
@@ -123,9 +123,9 @@ export default function Home() {
           </defs>
         </svg>
 
-        <div className="w-full flex flex-col items-start gap-7 mt-16">
+        <div className="w-full flex flex-col items-start gap-7 mt-16" id="airdrop">
           <h5 className="font-poppins font-[600] text-[24px] text-[#061012]">Airdrop Guild</h5>
-          <p className="max-w-[504px] text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">
+          <p className=" text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">
             This is a facility designed to reward RBV holders with tokens “Powered by RunesBridge-V”. <br />
             The Airdrop Guild is a facility by which tokens are distributed to our community on a staggered, timed and tiered basis, this by design a way to secure a launch by carefully adding a large number of small wallets to a community. Airdrops are also by design made to discourage selling pressure, encourage long term holding and increase holder count and minimize the size of each holder.
           </p>
@@ -133,7 +133,7 @@ export default function Home() {
 
         <Image src="/chain.svg" width={214} height={255} alt="chain" className="mt-20" />
 
-        <div className="w-full flex flex-col items-start gap-3 mt-6">
+        <div className="w-full flex flex-col items-start gap-3 mt-6" id="staking">
           <h2 className="font-poppins font-[600] text-6 text-[#061012]">Staking Forge</h2>
           <div className="font-inter font-[500] text-4 leading-[19.36px] text-[#727272]">
             <p>- Staking for Special Incentives</p>
@@ -145,7 +145,7 @@ export default function Home() {
 
         <Planet class="mt-14" />
 
-        <div className="w-full flex flex-col items-start gap-3 mt-7" >
+        <div className="w-full flex flex-col items-start gap-3 mt-7" id="bridge">
           <h2 className="font-poppins font-[600] text-6 text-[#061012]">
             Bridge
           </h2>
@@ -159,14 +159,14 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="w-full flex flex-col items-start gap-3 mt-10">
+        <div className="w-full flex flex-col items-start gap-3 mt-10" id="governance">
           <h2 className="font-poppins font-[600] text-6 text-[#061012]">CTO Governance</h2>
           <p className="font-inter font-[500] text-4 leading-[19.36px] text-[#444444]">It’s important to get a CTO right and part of long term success is raising revenue for a project and maintaining a project treasury but this must be handled in a manner which protects the community from catastrophic loss. We help to offer solutions to secure assets and institute decentralization.</p>
         </div>
 
         <Image src="/blocks.svg" width={275} height={245} alt="blocks" className="mt-10" />
 
-        <div className="w-full flex flex-col items-start gap-3 mt-10">
+        <div className="w-full flex flex-col items-start gap-3 mt-10" id="governance2">
           <h2 className="font-poppins font-[600] text-6 text-[#061012]">RBV Governance</h2>
           <p className="font-inter font-[500] text-4 leading-[19.36px] text-[#444444]">V is deeply committed to governance and is developing a robust, trustless system that involves elected members, rotating keys, and a formal decision making process. This system is designed to ensure that the project&apos;s direction constantly aligns with and engages the community and the broader crypto space.
             In the meantime, the treasury and all wallets are maintained using a system of multisig protocols with redundancy measures for lost or compromised keys.</p>
@@ -203,11 +203,11 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="w-full flex flex-col items-start gap-3 mt-10">
+        <div className="w-full flex flex-col items-start gap-3 mt-10" id="task">
           <h2 className="font-poppins font-[600] text-6 text-[#061012]">
             TaskBoard / Suggestions
           </h2>
-          <p className="max-w-[504px] text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">
+          <p className="text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">
             In the short term, all tasks and suggestions should be forwarded to
             the Suggestions or Tasks Board tickets. We want to make sure that
             the growth comes from the community in the form of tasks and that
@@ -217,7 +217,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="w-full flex flex-col items-center justify-center mt-10">
+        <div className="w-full flex flex-col items-center justify-center mt-10" id="token">
           <h2 className="font-poppins font-[600] text-6 text-[#061012] m-0 mb-5">RBV Token</h2>
           <div className="w-full flex items-center font-poppins font-[500] text-4 text-[#666666] border-[#C4C3CB] border-b-[0.8px]">
             <div className="w-1/2 h-full flex items-center justify-end p-2 border-r-[1.6px] -mr-[1.2px]"><p className="p-2 w-fit text-right">Total 1,000,000,000 <span className="text-nowrap">(1 Billion Tokens)</span></p></div>
