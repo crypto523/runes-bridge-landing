@@ -44,7 +44,7 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", curre
     }
 
     return (
-        <div className={`w-full h-full p-[30px_60px] overflow-hidden ${className}`}>
+        <div className={`hidden lg:flex w-full h-full p-[30px_60px] overflow-hidden ${className}`}>
             <div ref={containerRef} className="relative w-full h-full">
 
                 <svg width="100%" height="100%" className="z-10" xmlns="http://www.w3.org/2000/svg">

@@ -35,12 +35,52 @@ export default function Home() {
   const [vLoading, setVLoading] = useState<boolean>(false);
   const [viewSection, setViewSection] = useState<Section[]>([]);
 
+  const sections: Section[] = ["HERO", "LABS", "WELCOME", "FEATURE", "AIRDROP", "STAKING", "BRIDGE", "GOVERNANCE", "TASKBOARD", "RBV"];
+
   const showSection = (section: Section) => {
     setViewSection(prevViewSection => [...prevViewSection, section]);
   }
 
   const hideSection = (section: Section) => {
     setViewSection(prevViewSection => prevViewSection.filter(s => s !== section));
+  };
+
+  const navigateSection = (direction: number, currentSection: Section) => {
+    const currentIndex = sections.indexOf(currentSection);
+
+    let tartgetIndex: number;
+    if (direction === 1) {
+      tartgetIndex = currentIndex === sections.length - 1 ? sections.length - 1 : currentIndex + 1;
+    } else {
+      tartgetIndex = currentIndex === 0 ? 0 : currentIndex - 1;
+    }
+
+    hideSection(currentSection);
+    showSection(sections[tartgetIndex]);
+  }
+
+  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    const container = event.currentTarget;
+    
+    const isAtTop = container.scrollTop === 0;
+    const isAtBottom = container.scrollHeight - container.scrollTop === container.clientHeight;
+
+    console.log("scroll triggered!", container.scrollTop);
+
+    if (isAtTop && event.deltaY < 0) {
+      // Scrolling up at the top
+      navigateSection(-1, viewSection[0]);
+    } else if (isAtBottom && event.deltaY > 0) {
+      // Scrolling down at the bottom
+      navigateSection(1, viewSection[0]);
+    } else if (container.scrollHeight <= container.clientHeight) {
+      // No scroll bar, scroll direction detection
+      if (event.deltaY < 0) {
+        navigateSection(-1, viewSection[0]);
+      } else if (event.deltaY > 0) {
+        navigateSection(1, viewSection[0]);
+      }
+    }
   };
 
   const onFinishPreloading = () => {
@@ -62,7 +102,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full min-h-[100vh]">
+    <main className="relative w-full min-h-[100vh] overflow-auto" onWheel={handleWheel}>
       {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("WELCOME") && <Welcome showSection={showSection} hideSection={hideSection} />}
@@ -74,7 +114,7 @@ export default function Home() {
       {viewSection.includes("TASKBOARD") && <Taskboard showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("RBV") && <RBVToken showSection={showSection} hideSection={hideSection} />}
 
-      {viewSection.includes("HERO") && <div className="w-full px-8 py-[112px] flex flex-col items-center lg:hidden">
+      <div className="w-full px-8 py-[112px] flex flex-col items-center lg:hidden">
         <div className="w-full" id="launch">
           <h6 className="text-[#061012] font-[600] font-poppins text-[20px] leading-[30px] mb-[10px]">
             Launch a CTO <br /> &quot;Powered by RunesBridge-V&quot;
@@ -228,7 +268,7 @@ export default function Home() {
             <div className="w-1/2 h-full p-2 border-l-[1.6px] -ml-[1.2px]"><p className="p-2 w-fit">Total Uniswap LP Seed 300,000,00</p></div>
           </div>
         </div>
-      </div>}
+      </div>
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}
