@@ -57,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
     }
 
     return (
-        <section className="absolute top-0 w-[100vw]" id="hero" style={{ backgroundImage: `url("bg-grid.svg")`, zIndex: 100 }}>
+        <section className="lg:absolute top-0 w-[100vw]" id="hero" style={{ backgroundImage: `url("bg-grid.svg")`, zIndex: 100 }}>
             <div id="up">
                 <Navbar onLogoClick={() => { }} />
                 <Banner />

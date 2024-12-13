@@ -274,7 +274,7 @@ export const PeopleFrameIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) 
 
 import Image from "next/image";
 export const WideDistributionIcon: React.FC = (props) => (
-    <Image src="/wide.svg" width={110} height={110} style={{height: "10vh", width: "auto"}} alt="wide" />
+    <Image src="/wide.svg" width={110} height={110} style={{ height: "10vh", width: "auto" }} alt="wide" />
 )
 
 export const ShieldIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -286,5 +286,59 @@ export const ShieldIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 )
 
 export const BullhornIcon: React.FC = (props) => (
-    <Image src="/bullhorn.svg" width={50} height={50} alt="bullhorn" /> 
+    <Image src="/bullhorn.svg" width={50} height={50} alt="bullhorn" />
+)
+
+export const CubeConvertIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M64.1667 43.75C64.1667 55.0375 55.0375 64.1667 43.75 64.1667L46.8125 59.0625" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5.83301 26.25C5.83301 14.9625 14.9622 5.83331 26.2497 5.83331L23.1872 10.9375" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M39.958 12.9792L51.5663 19.6875L63.058 13.0084" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M51.5664 31.5583V19.6583" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M48.825 6.44581L41.825 10.3249C40.25 11.1999 38.9375 13.4165 38.9375 15.2248V22.6333C38.9375 24.4416 40.2208 26.6583 41.825 27.5333L48.825 31.4125C50.3125 32.2583 52.7625 32.2583 54.2792 31.4125L61.2791 27.5333C62.8541 26.6583 64.1666 24.4416 64.1666 22.6333V15.2248C64.1666 13.4165 62.8833 11.1999 61.2791 10.3249L54.2792 6.44581C52.7917 5.62915 50.3417 5.62915 48.825 6.44581Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6.85352 45.0626L18.4327 51.7709L29.9535 45.0918" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M18.4326 63.6417V51.7416" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M15.7205 38.5292L8.72052 42.4082C7.14552 43.2832 5.83301 45.4999 5.83301 47.3082V54.7167C5.83301 56.525 7.11636 58.7416 8.72052 59.6166L15.7205 63.4958C17.208 64.3417 19.658 64.3417 21.1747 63.4958L28.1747 59.6166C29.7497 58.7416 31.0622 56.525 31.0622 54.7167V47.3082C31.0622 45.4999 29.7789 43.2832 28.1747 42.4082L21.1747 38.5292C19.658 37.7125 17.208 37.7125 15.7205 38.5292Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const ShieldTickIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30.5963 6.50417L16.0421 11.9875C12.688 13.2417 9.94629 17.2083 9.94629 20.7667V42.4375C9.94629 45.8792 12.2213 50.4 14.9921 52.4708L27.5338 61.8333C31.6463 64.925 38.413 64.925 42.5255 61.8333L55.0671 52.4708C57.838 50.4 60.113 45.8792 60.113 42.4375V20.7667C60.113 17.1792 57.3713 13.2125 54.0171 11.9583L39.463 6.50417C36.9838 5.60001 33.0171 5.60001 30.5963 6.50417Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M26.3955 34.6209L31.0913 39.3167L43.633 26.775" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const CertIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M61.2793 32.7249V45.8207C61.2793 58.9166 56.0584 64.1667 42.9334 64.1667H27.2127C25.521 64.1667 23.9751 64.0792 22.5459 63.8751" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.86621 45.2667V32.7249" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M35.0876 35C40.4251 35 44.3626 30.6543 43.8376 25.3168L41.8833 5.83334H28.2625L26.3084 25.3168C25.7834 30.6543 29.7501 35 35.0876 35Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M53.4625 35C59.3541 35 63.6708 30.2166 63.0874 24.3541L62.2707 16.3333C61.2207 8.74994 58.3041 5.83334 50.6624 5.83334H41.7666L43.8083 26.2792C44.3333 31.0917 48.65 35 53.4625 35Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M16.5377 35C21.3502 35 25.696 31.0917 26.1627 26.2792L26.8044 19.8335L28.2044 5.83334H19.3086C11.6669 5.83334 8.75031 8.74994 7.70031 16.3333L6.88355 24.3541C6.30022 30.2166 10.646 35 16.5377 35Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M26.2503 55.4167C26.2503 57.6042 25.6378 59.6752 24.5586 61.4252C24.0044 62.3585 23.3336 63.2042 22.5461 63.8751C22.4586 63.9917 22.3712 64.0792 22.2545 64.1667C20.2128 66.0042 17.5295 67.0833 14.5837 67.0833C11.0253 67.0833 7.84607 65.4791 5.74607 62.9707C5.68774 62.8832 5.6004 62.825 5.54206 62.7375C5.19206 62.3292 4.87121 61.8918 4.60871 61.4252C3.52954 59.6752 2.91699 57.6042 2.91699 55.4167C2.91699 51.7417 4.60866 48.4458 7.29199 46.3167C7.78783 45.9083 8.31276 45.5584 8.86693 45.2667C10.5586 44.3042 12.5128 43.75 14.5837 43.75C17.5003 43.75 20.1253 44.7999 22.1669 46.5791C22.5169 46.8416 22.8378 47.1626 23.1295 47.4834C25.0545 49.5834 26.2503 52.3542 26.2503 55.4167Z" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M18.9289 55.3583H10.2373" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M14.583 51.1001V59.8209" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const BuildingIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.83301 64.1667H64.1663" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.60449 64.1667L8.75033 29.0791C8.75033 27.3 9.59616 25.6084 10.9962 24.5001L31.4128 8.60424C33.5128 6.97091 36.4587 6.97091 38.5878 8.60424L59.0045 24.4709C60.4337 25.5792 61.2503 27.2708 61.2503 29.0791V64.1667" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linejoin="round" />
+        <path d="M45.2087 32.0833H24.792C22.3712 32.0833 20.417 34.0375 20.417 36.4583V64.1667H49.5837V36.4583C49.5837 34.0375 47.6295 32.0833 45.2087 32.0833Z" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M29.167 47.3958V51.7708" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M30.625 21.875H39.375" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const WalletIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M51.7753 20.5624C51.0753 20.4458 50.3461 20.4167 49.5878 20.4167H20.4211C19.6044 20.4167 18.8169 20.475 18.0586 20.5916C18.4669 19.775 19.0503 19.0167 19.7503 18.3167L29.2294 8.80837C33.2253 4.84171 39.7003 4.84171 43.6961 8.80837L48.8003 13.9708C50.6669 15.8083 51.6586 18.1416 51.7753 20.5624Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M26.2503 55.4167C26.2503 57.6042 25.6378 59.675 24.5587 61.425C22.5462 64.8083 18.842 67.0833 14.5837 67.0833C10.3253 67.0833 6.62116 64.8083 4.60866 61.425C3.52949 59.675 2.91699 57.6042 2.91699 55.4167C2.91699 48.9708 8.13783 43.75 14.5837 43.75C21.0295 43.75 26.2503 48.9708 26.2503 55.4167Z" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M18.9348 55.3568H10.2432" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M14.584 51.0986V59.8194" stroke="#061012" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M64.1663 35V49.5833C64.1663 58.3333 58.333 64.1666 49.583 64.1666H22.2538C23.158 63.4083 23.9455 62.475 24.558 61.425C25.6372 59.675 26.2497 57.6041 26.2497 55.4166C26.2497 48.9708 21.0288 43.75 14.583 43.75C11.083 43.75 7.96217 45.2958 5.83301 47.7166V35C5.83301 27.0666 10.6163 21.525 18.0538 20.5916C18.8122 20.475 19.5997 20.4166 20.4163 20.4166H49.583C50.3413 20.4166 51.0705 20.4458 51.7705 20.5624C59.2955 21.4374 64.1663 27.0083 64.1663 35Z" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M64.1663 36.4584H55.4163C52.208 36.4584 49.583 39.0834 49.583 42.2917C49.583 45.5 52.208 48.125 55.4163 48.125H64.1663" stroke="#061012" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
 )
