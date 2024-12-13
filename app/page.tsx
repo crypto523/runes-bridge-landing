@@ -65,8 +65,6 @@ export default function Home() {
     const isAtTop = container.scrollTop === 0;
     const isAtBottom = container.scrollHeight - container.scrollTop === container.clientHeight;
 
-    console.log("scroll triggered!", container.scrollTop);
-
     if (isAtTop && event.deltaY < 0) {
       // Scrolling up at the top
       navigateSection(-1, viewSection[0]);
