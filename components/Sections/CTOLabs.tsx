@@ -12,7 +12,7 @@ interface CTOLabsProps {
 const CTOLabs: React.FC<CTOLabsProps> = ({ showSection, hideSection }) => {
 
   useEffect(() => {
-    gsap.to("#labs", {opacity: 1})
+    gsap.to("#labs", {opacity: 1, scaleX: 1, duration: 1})
   })
 
   return (

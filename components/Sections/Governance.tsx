@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 import SectionLayout from "./Layout";
 import { Section } from "@/app/page";
+import gsap from "gsap";
 
 interface GovernanceProps {
     showSection: (section: Section) => void;
@@ -11,8 +12,12 @@ interface GovernanceProps {
 
 const Governance: React.FC<GovernanceProps> = ({ showSection, hideSection }) => {
 
+    useEffect(() => {
+        gsap.to("#governance", { opacity: 1, scaleX: 1, duration: 1 })
+    })
+
     return (
-        <div id="governance" className="absolute top-0 w-[100vw] h-[100vh]">
+        <div id="governance" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
             <SectionLayout showSection={showSection} hideSection={hideSection} nextSection="TASKBOARD" currentSection="GOVERNANCE">
                 <div className="w-full flex-1 flex items-center justify-around">
                     <div className="max-w-[500px] w-[35vw] h-full flex flex-col items-center justify-evenly">

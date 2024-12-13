@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionLayoutF from "./LayoutF";
 import { Section } from "@/app/page";
+import gsap from "gsap";
 
 interface TaskboardProps {
     showSection: (section: Section) => void;
@@ -8,8 +9,13 @@ interface TaskboardProps {
 }
 
 const Taskboard: React.FC<TaskboardProps> = ({ showSection, hideSection }) => {
+
+    useEffect(() => {
+        gsap.to("#taskboard", { opacity: 1, scaleX: 1, duration: 1 })
+    })
+    
     return (
-        <div id="taskboard" className="absolute top-0 w-[100vw] h-[100vh]">
+        <div id="taskboard" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
             <SectionLayoutF currentSection="TASKBOARD" nextSection="RBV" showSection={showSection} hideSection={hideSection}>
                 <div className="w-full flex-1 flex items-center justify-around">
                     <div className="max-w-[531px] flex flex-col gap-2.5">

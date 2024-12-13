@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import gsap from "gsap";
 import SectionLayout from "./Layout";
 import UpBox from "../utils/UpBox";
 import { ColorSquareFrameIcon, ColorSquareIcon, FormatSpuareIcon, FormatSquareFrameIcon, HierarchyIcon, MoneyReceiveFrameIcon, MoneyReceiveIcon, PeopleFrameIcon, PeopleIcon } from "../utils/Icons";
@@ -13,8 +14,12 @@ interface FeaturesProps {
 
 const Features: React.FC<FeaturesProps> = ({ showSection, hideSection }) => {
 
+    useEffect(() => {
+        gsap.to("#feature", { opacity: 1, scaleX: 1, duration: 1 })
+    })
+
     return (
-        <div id="features" className="absolute top-0 w-[100vw] h-[100vh]">
+        <div id="feature" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
             <SectionLayout showSection={showSection} nextSection="AIRDROP" hideSection={hideSection} currentSection="FEATURE">
                 <div className="w-full h-full flex-1 flex flex-col items-start justify-evenly">
                     <div className="w-full flex gap-[1.8vw] px-[3vw]">

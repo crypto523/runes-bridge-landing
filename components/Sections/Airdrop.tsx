@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionLayoutF from "./LayoutF";
 import { Section } from "@/app/page";
+import gsap from "gsap";
 
 interface AirdropProps {
     showSection: (section: Section) => void;
@@ -9,8 +10,12 @@ interface AirdropProps {
 
 const Airdrop: React.FC<AirdropProps> = ({showSection, hideSection}) => {
 
+    useEffect(() => {
+        gsap.to("#airdrop", { opacity: 1, scaleX: 1, duration: 1 })
+    })
+
     return (
-        <div id="airdrop" className="absolute top-0 w-[100vw] h-[100vh]">
+        <div id="airdrop" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
             <SectionLayoutF currentSection="AIRDROP" nextSection="STAKING" showSection={showSection} hideSection={hideSection}>
                 <div className="w-full flex-1 flex items-center justify-around">
                     <p className="max-w-[504px] text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">

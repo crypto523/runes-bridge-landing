@@ -97,7 +97,7 @@ const SectionLayout: React.FC<LayoutProps> = ({ children, className = "", curren
                                     </svg> :
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => setIsMenuOpened(false)}>
                                         <g id="Menu / Close_LG">
-                                            <path id="Vector" d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001" stroke="#061012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path id="Vector" d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001" stroke="#061012" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </g>
                                     </svg>
                             }

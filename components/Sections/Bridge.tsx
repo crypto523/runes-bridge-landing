@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionLayoutF from "./LayoutF";
 import Planet from "../Planet/Planet";
 import { Section } from "@/app/page";
+import gsap from "gsap";
 
 interface BridgeProps {
   showSection: (section: Section) => void;
@@ -9,8 +10,13 @@ interface BridgeProps {
 }
 
 const Bridge: React.FC<BridgeProps> = ({ showSection, hideSection }) => {
+
+  useEffect(() => {
+    gsap.to("#bridge", { opacity: 1, scaleX: 1, duration: 1 })
+  })
+
   return (
-    <div id="bridge" className="absolute top-0 w-[100vw] h-[100vh]">
+    <div id="bridge" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
       <SectionLayoutF currentSection="BRIDGE" nextSection="GOVERNANCE" showSection={showSection} hideSection={hideSection}>
         <div className="w-full flex-1 flex items-center justify-around">
           <div className="max-w-[504px] flex flex-col">

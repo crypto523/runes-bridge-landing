@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 import SectionLayout from "./Layout";
 import { Section } from "@/app/page";
+import gsap from "gsap";
 
 interface StakingProps {
     showSection: (section: Section) => void;
@@ -11,8 +12,12 @@ interface StakingProps {
 
 const Staking: React.FC<StakingProps> = ({ showSection, hideSection }) => {
 
+    useEffect(() => {
+        gsap.to("#staking", { opacity: 1, scaleX: 1, duration: 1 })
+    })
+
     return (
-        <div id="staking" className="absolute top-0 w-[100vw] h-[100vh]">
+        <div id="staking" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
             <SectionLayout showSection={showSection} nextSection="BRIDGE" currentSection="STAKING" hideSection={hideSection}>
                 <div className="w-full flex-1 flex items-center justify-around">
                     <Image src="/chain.svg" width={382} height={420} alt="chain" style={{ height: "60vh", width: "auto" }} />

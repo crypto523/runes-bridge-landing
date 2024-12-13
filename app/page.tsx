@@ -33,16 +33,16 @@ export type Section = "HERO" | "LABS" | "WELCOME" | "AIRDROP" | "FEATURE" | "BRI
 export default function Home() {
   const [preloading, setPreloading] = useState<boolean>(true);
   const [vLoading, setVLoading] = useState<boolean>(false);
-  const [viewSection, setViewSection] = useState<Section[]>([]);
+  const [viewSection, setViewSection] = useState<Section>("NONE");
 
   const sections: Section[] = ["HERO", "LABS", "WELCOME", "FEATURE", "AIRDROP", "STAKING", "BRIDGE", "GOVERNANCE", "TASKBOARD", "RBV"];
 
   const showSection = (section: Section) => {
-    setViewSection(prevViewSection => [...prevViewSection, section]);
+    setViewSection(section);
   }
 
   const hideSection = (section: Section) => {
-    setViewSection(prevViewSection => prevViewSection.filter(s => s !== section));
+    
   };
 
   const navigateSection = (direction: number, currentSection: Section) => {
@@ -50,33 +50,50 @@ export default function Home() {
 
     let tartgetIndex: number;
     if (direction === 1) {
-      tartgetIndex = currentIndex === sections.length - 1 ? sections.length - 1 : currentIndex + 1;
+      tartgetIndex = (currentIndex + 1) % sections.length;
     } else {
-      tartgetIndex = currentIndex === 0 ? 0 : currentIndex - 1;
+      tartgetIndex = (currentIndex + sections.length - 1) % sections.length;
     }
 
-    hideSection(currentSection);
-    showSection(sections[tartgetIndex]);
+    if (currentSection === "HERO") {
+      const animation = gsap
+        .timeline()
+        .to("#up", { translateY: -400, opacity: 0, duration: 2 })
+        .to("#planet", {
+          translateY: 400, opacity: 0, duration: 2, onComplete: () => {
+            showSection(sections[tartgetIndex]);
+          }
+        }, "<");
+    } else {
+      const ID = currentSection.toLocaleLowerCase();
+      const animation = gsap
+        .timeline()
+        .to(`#${ID}`, {
+          scaleX: 0, opacity: 0, duration: 1, onComplete: () => {
+            showSection(sections[tartgetIndex]);
+          }
+        });
+      }
   }
 
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     const container = event.currentTarget;
-    
+
     const isAtTop = container.scrollTop === 0;
     const isAtBottom = container.scrollHeight - container.scrollTop === container.clientHeight;
 
     if (isAtTop && event.deltaY < 0) {
       // Scrolling up at the top
-      navigateSection(-1, viewSection[0]);
+      navigateSection(-1, viewSection);
     } else if (isAtBottom && event.deltaY > 0) {
       // Scrolling down at the bottom
-      navigateSection(1, viewSection[0]);
+      navigateSection(1, viewSection);
     } else if (container.scrollHeight <= container.clientHeight) {
       // No scroll bar, scroll direction detection
       if (event.deltaY < 0) {
-        navigateSection(-1, viewSection[0]);
+        navigateSection(-1, viewSection);
       } else if (event.deltaY > 0) {
-        navigateSection(1, viewSection[0]);
+        navigateSection(1, viewSection);
       }
     }
   };

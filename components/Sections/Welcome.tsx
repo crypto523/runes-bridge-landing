@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionLayoutF from "./LayoutF";
 import UpBox from "../utils/UpBox";
 import { BullhornIcon, MoneyReceiveFrameIcon, PeopleFrameIcon, ShieldIcon, WideDistributionIcon } from "../utils/Icons";
 import { contents, titles } from "../utils/constants";
 import { Section } from "@/app/page";
 import DownBox from "../utils/DownBox";
+import gsap from "gsap";
 
 interface WelcomeProps {
     showSection: (section: Section) => void;
@@ -13,8 +14,12 @@ interface WelcomeProps {
 
 const Welcome: React.FC<WelcomeProps> = ({showSection, hideSection}) => {
 
+    useEffect(() => {
+        gsap.to("#welcome", { opacity: 1, scaleX: 1, duration: 1 })
+    })
+
     return (
-        <div id="welcome" className="absolute top-0 w-[100vw] h-[100vh]">
+        <div id="welcome" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
             <SectionLayoutF currentSection="WELCOME" nextSection="FEATURE" hideSection={hideSection} showSection={showSection}>
                 <div className="w-full flex-1 flex flex-col items-center justify-evenly px-[5vw]">
                     <div className="w-full flex flex-col items-end">
