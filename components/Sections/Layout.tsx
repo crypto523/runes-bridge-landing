@@ -119,7 +119,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height}
                         x2={0}
                         y2={dimensions.width * 0.02}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={1.5}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -128,7 +128,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.width * 0.02}
                         x2={dimensions.width * 0.02}
                         y2={0}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={0.7}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -137,7 +137,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={0}
                         x2={dimensions.width * 0.5}
                         y2={0}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={1.5}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -146,7 +146,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={0}
                         x2={dimensions.width * 0.55}
                         y2={dimensions.height * 0.15}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={0.8}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -155,7 +155,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height * 0.15}
                         x2={dimensions.width * 0.98}
                         y2={dimensions.height * 0.15}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={0.8}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -164,7 +164,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height * 0.15}
                         x2={dimensions.width}
                         y2={dimensions.height * 0.15 + dimensions.width * 0.02}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={0.8}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -173,7 +173,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height * 0.15 + dimensions.width * 0.02}
                         x2={dimensions.width}
                         y2={dimensions.height * 0.9 - dimensions.width * 0.02}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={1.5}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -182,7 +182,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height * 0.9 - dimensions.width * 0.02}
                         x2={dimensions.width * 0.98}
                         y2={dimensions.height * 0.9}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={0.8}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -191,7 +191,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height * 0.9}
                         x2={dimensions.width * 0.3}
                         y2={dimensions.height * 0.9}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={0.8}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -200,7 +200,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height * 0.9}
                         x2={dimensions.width * 0.25}
                         y2={dimensions.height}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={0.8}
                         vectorEffect="non-scaling-stroke"
                     />
@@ -209,7 +209,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         y1={dimensions.height}
                         x2={dimensions.width * 0.25}
                         y2={dimensions.height}
-                        stroke="#444444"
+                        stroke="var(--color-secondary)"
                         strokeWidth={1.5}
                     />
                     <polygon
@@ -303,7 +303,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                                 }`}
                         >
                             <Navbar
-                                className="!px-[44px] !py-[3vh] !border-b-0"
+                                className="!px-[44px] !border-b-0"
                                 subClass="!justify-end gap-14"
                                 onLogoClick={showHero}
                             />

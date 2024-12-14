@@ -26,7 +26,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
     };
 
     return (
-        <div className={`absolute top-0 bottom-0 w-[47.5%] bg-[#061012] transition-all ${isOpened ? "flex flex-col items-center justify-around" : "hidden"} ${isRight ? "right-0" : "left-0"}`}>
+        <div className={`absolute top-0 bottom-0 w-[47.5%] bg-primary transition-all ${isOpened ? "flex flex-col items-center justify-around" : "hidden"} ${isRight ? "right-0" : "left-0"}`}>
             <div className={`w-full h-full flex flex-col justify-around pt-[6vh] pb-[2vh] z-10 font-poppins font-[600] text-[20px] leading-[30px] text-white ${isRight ? "items-end pr-[6vw]" : "items-start pl-[6vw]"}`}>
                 {menuList.map((menu, index) => (
                     <div className="cursor-pointer" key={index} onClick={() => navigateSection(menu.section)}>

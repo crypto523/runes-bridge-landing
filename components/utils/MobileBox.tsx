@@ -17,8 +17,8 @@ const MobileBox: React.FC<MobileBoxProps> = (props) => {
                 <props.image />
             </div>
             <div className="w-full flex flex-col items-start gap-3.5">
-                <h6 className="font-poppins font-[600] text-6 text-[#061012]">{props.title}</h6>
-                <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-[#444444]">{props.content}</p>
+                <h6 className="font-poppins font-[600] text-6 text-primary">{props.title}</h6>
+                <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-secondary">{props.content}</p>
             </div>
         </div>
     )

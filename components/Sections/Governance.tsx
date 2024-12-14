@@ -22,14 +22,14 @@ const Governance: React.FC<GovernanceProps> = ({ showSection, hideSection }) => 
                 <div className="w-full flex-1 flex items-center justify-around">
                     <div className="max-w-[500px] w-[35vw] h-full flex flex-col items-center justify-evenly">
                         <div className="flex flex-col items-start gap-[10px]">
-                            <h2 className="font-poppins font-[600] text-[32px] text-[#061012]">CTO Governance</h2>
-                            <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-[#444444]">It’s important to get a CTO right and part of long term success is raising revenue for a project and maintaining a project treasury but this must be handled in a manner which protects the community from catastrophic loss. We help to offer solutions to secure assets and institute decentralization.</p>
+                            <h2 className="font-poppins font-[600] text-[32px] text-primary">CTO Governance</h2>
+                            <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-secondary">It’s important to get a CTO right and part of long term success is raising revenue for a project and maintaining a project treasury but this must be handled in a manner which protects the community from catastrophic loss. We help to offer solutions to secure assets and institute decentralization.</p>
                         </div>
                         <Image src="/blocks.svg" width={275} height={275} alt="blocks" style={{ height: "30vh", width: "auto" }} />
                     </div>
                     <div className="max-w-[500px] w-[35vw] flex flex-col items-start gap-[10px]">
-                        <h2 className="font-poppins font-[600] text-[32px] text-[#061012]">RBV Governance</h2>
-                        <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-[#444444]">V is deeply committed to governance and is developing a robust, trustless system that involves elected members, rotating keys, and a formal decision making process. This system is designed to ensure that the project&apos;s direction constantly aligns with and engages the community and the broader crypto space.
+                        <h2 className="font-poppins font-[600] text-[32px] text-primary">RBV Governance</h2>
+                        <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-secondary">V is deeply committed to governance and is developing a robust, trustless system that involves elected members, rotating keys, and a formal decision making process. This system is designed to ensure that the project&apos;s direction constantly aligns with and engages the community and the broader crypto space.
                             In the meantime, the treasury and all wallets are maintained using a system of multisig protocols with redundancy measures for lost or compromised keys.</p>
                     </div>
                 </div>

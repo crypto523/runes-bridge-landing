@@ -63,13 +63,13 @@ const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
                 <Banner />
 
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-[16px] mt-[40px] opacity-0" id="hero-buttons">
-                    <RunesButton className="w-3/5 lg:w-auto border-[#061012] tab">
+                    <RunesButton className="w-3/5 lg:w-auto border-primary tab">
                         <span>WorkShop</span>
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.3135 2C6.80348 2 2.31348 6.49 2.31348 12C2.31348 17.51 6.80348 22 12.3135 22C17.8235 22 22.3135 17.51 22.3135 12C22.3135 6.49 17.8235 2 12.3135 2ZM15.1035 12.53L11.5735 16.06C11.4235 16.21 11.2335 16.28 11.0435 16.28C10.8535 16.28 10.6635 16.21 10.5135 16.06C10.2235 15.77 10.2235 15.29 10.5135 15L13.5135 12L10.5135 9C10.2235 8.71 10.2235 8.23 10.5135 7.94C10.8035 7.65 11.2835 7.65 11.5735 7.94L15.1035 11.47C15.4035 11.76 15.4035 12.24 15.1035 12.53Z" fill="#FA0B0F" />
                         </svg>
                     </RunesButton>
-                    <RunesButton className="w-3/5 lg:w-auto bg-transparent text-black border-[#061012] px-[40px] ">Buy RBV</RunesButton>
+                    <RunesButton className="w-3/5 lg:w-auto bg-transparent text-black border-primary px-[40px] ">Buy RBV</RunesButton>
                 </div>
 
                 <div className="flex items-center justify-center text-[#000000]">

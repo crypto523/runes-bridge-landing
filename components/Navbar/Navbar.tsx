@@ -27,14 +27,14 @@ const Navbar: React.FC<NavbarProps> = ({
     }
 
     const defaultClasses =
-        "relative w-full p-5 lg:p-[40px_165px] lg:border-b-2 lg:border-[#C4C3CB]";
+        "relative w-full p-5 lg:px-[165px] lg:h-[15%] flex items-center lg:border-b-2 lg:border-[#C4C3CB]";
     return (
         <div className={classNames(defaultClasses, className)}>
             <div
-                className={classNames("flex items-center justify-between", mainClass)}
+                className={classNames("w-full flex items-center justify-between", mainClass)}
             >
                 <div className="flex items-center cursor-pointer" onClick={onLogoClick}>
-                    <p className="font-conthrax font-[600] text-[20px] leading-[24px] text-[#061012]">
+                    <p className="font-conthrax font-[600] text-[20px] leading-[24px] text-primary">
                         RunesBridge
                     </p>
                     <Image src="logo.svg" width={60} height={60} alt="logo" />
@@ -130,7 +130,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </button>
             </div>
             {isMenuOpened &&
-                <div className="absolute top-[100%] left-0 z-10 w-full flex flex-col items-start gap-5 lg:hidden px-6 pt-9 bg-[#061012] font-poppins font-[600] text-[14px] leading-[21px] text-white">
+                <div className="absolute top-[100%] left-0 z-10 w-full flex flex-col items-start gap-5 lg:hidden px-6 pt-9 bg-primary font-poppins font-[600] text-[14px] leading-[21px] text-white">
                     <div className="relative px-6 py-2 cursor-pointer" onClick={() => scrollTo("launch")}>
                         <p className="relative z-10">Launch a CTO</p>
                         <svg width="100%" height="100%" className="absolute top-0 left-0" viewBox="0 0 149 43" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -22,7 +22,7 @@ const Staking: React.FC<StakingProps> = ({ showSection, hideSection }) => {
                 <div className="w-full flex-1 flex items-center justify-around">
                     <Image src="/chain.svg" width={382} height={420} alt="chain" style={{ height: "60vh", width: "auto" }} />
                     <div className="flex flex-col items-start gap-[10px] max-w-[504px]">
-                        <h2 className="font-poppins font-[600] text-[6vh] text-[#061012]">Staking Forge</h2>
+                        <h2 className="font-poppins font-[600] text-[6vh] text-primary">Staking Forge</h2>
                         <div className="font-inter font-[500] text-[2vh] leading-[19.36px] text-[#727272]">
                             <p>- Staking for Special Incentives</p>
                             <p>This is a white-label staking facility allowing projects “Powered by RunesBridge-V” to offer staking to their community. This is designed to create a type of vampire attack where a community from a failed project is incentivized to join a new CTO version through an exclusive staking reward for whitelisted wallet addresses. For transparency, a copy of the table of whitelisted wallets and their corresponding reward eligibility will be published on our Discord for external scrutiny. Join our Discord and open a staking ticket to get started with staking for your community.</p>

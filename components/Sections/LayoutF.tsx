@@ -80,17 +80,17 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", curre
                 </svg>
 
                 <svg width="100%" height="105%" className="absolute top-0 z-20" xmlns="http://www.w3.org/2000/svg">
-                    <line x1={dimensions.width} y1={dimensions.height} x2={dimensions.width} y2={dimensions.width * 0.02} stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width} y1={dimensions.width * 0.02} x2={dimensions.width * 0.98} y2={0} stroke="#444444" strokeWidth={0.7} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width * 0.98} y1={0} x2={dimensions.width * 0.5} y2={0} stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width * 0.5} y1={0} x2={dimensions.width * 0.45} y2={dimensions.height * 0.15} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width * 0.45} y1={dimensions.height * 0.15} x2={dimensions.width * 0.02} y2={dimensions.height * 0.15} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width * 0.02} y1={dimensions.height * 0.15} x2={0} y2={dimensions.height * 0.15 + dimensions.width * 0.02} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
-                    <line x1={0} y1={dimensions.height * 0.15 + dimensions.width * 0.02} x2={0} y2={dimensions.height * 0.9 - dimensions.width * 0.02} stroke="#444444" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-                    <line x1={0} y1={dimensions.height * 0.9 - dimensions.width * 0.02} x2={dimensions.width * 0.02} y2={dimensions.height * 0.9} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width * 0.02} y1={dimensions.height * 0.9} x2={dimensions.width * 0.7} y2={dimensions.height * 0.9} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width * 0.7} y1={dimensions.height * 0.9} x2={dimensions.width * 0.75} y2={dimensions.height} stroke="#444444" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
-                    <line x1={dimensions.width} y1={dimensions.height} x2={dimensions.width * 0.75} y2={dimensions.height} stroke="#444444" strokeWidth={1.5} />
+                    <line x1={dimensions.width} y1={dimensions.height} x2={dimensions.width} y2={dimensions.width * 0.02} stroke="var(--color-secondary)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width} y1={dimensions.width * 0.02} x2={dimensions.width * 0.98} y2={0} stroke="var(--color-secondary)" strokeWidth={0.7} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.98} y1={0} x2={dimensions.width * 0.5} y2={0} stroke="var(--color-secondary)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.5} y1={0} x2={dimensions.width * 0.45} y2={dimensions.height * 0.15} stroke="var(--color-secondary)" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.45} y1={dimensions.height * 0.15} x2={dimensions.width * 0.02} y2={dimensions.height * 0.15} stroke="var(--color-secondary)" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.02} y1={dimensions.height * 0.15} x2={0} y2={dimensions.height * 0.15 + dimensions.width * 0.02} stroke="var(--color-secondary)" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={0} y1={dimensions.height * 0.15 + dimensions.width * 0.02} x2={0} y2={dimensions.height * 0.9 - dimensions.width * 0.02} stroke="var(--color-secondary)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+                    <line x1={0} y1={dimensions.height * 0.9 - dimensions.width * 0.02} x2={dimensions.width * 0.02} y2={dimensions.height * 0.9} stroke="var(--color-secondary)" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.02} y1={dimensions.height * 0.9} x2={dimensions.width * 0.7} y2={dimensions.height * 0.9} stroke="var(--color-secondary)" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width * 0.7} y1={dimensions.height * 0.9} x2={dimensions.width * 0.75} y2={dimensions.height} stroke="var(--color-secondary)" strokeWidth={0.8} vectorEffect="non-scaling-stroke" />
+                    <line x1={dimensions.width} y1={dimensions.height} x2={dimensions.width * 0.75} y2={dimensions.height} stroke="var(--color-secondary)" strokeWidth={1.5} />
                     <polygon points={`${dimensions.width * 0.75},${dimensions.height * 1.02} ${dimensions.width * 0.7 - dimensions.height * 0.01},${dimensions.height * 0.91} ${dimensions.width * 0.05},${dimensions.height * 0.91} ${dimensions.width * 0.05},${dimensions.height * 1.02}`} fill="black" />
                 </svg>
 
@@ -122,7 +122,7 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", curre
                     </div>
                     <div className="relative w-full h-full">
                         <div className={`w-full h-full flex flex-col items-center transition-all ${isMenuOpened && 'blur-md'}`}>
-                            <Navbar className="!px-[44px] !py-[2vh] !border-b-0" mainClass="flex-row-reverse" subClass="flex-row-reverse !justify-end gap-14" onLogoClick={showHero} />
+                            <Navbar className="!px-[44px] !border-b-0" mainClass="flex-row-reverse" subClass="flex-row-reverse !justify-end gap-14" onLogoClick={showHero} />
 
                             {children}
 

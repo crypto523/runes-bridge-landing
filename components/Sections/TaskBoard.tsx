@@ -19,7 +19,7 @@ const Taskboard: React.FC<TaskboardProps> = ({ showSection, hideSection }) => {
             <SectionLayoutF currentSection="TASKBOARD" nextSection="RBV" showSection={showSection} hideSection={hideSection}>
                 <div className="w-full flex-1 flex items-center justify-around">
                     <div className="max-w-[531px] flex flex-col gap-2.5">
-                        <h2 className="font-poppins font-[600] text-[40px] leading-[86px] text-[#061012]">
+                        <h2 className="font-poppins font-[600] text-[40px] leading-[86px] text-primary">
                             TaskBoard / Suggestions
                         </h2>
                         <p className="max-w-[504px] text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">

@@ -40,10 +40,10 @@ const CTOLabs: React.FC<CTOLabsProps> = ({ showSection, hideSection }) => {
             }}
           />
           <div className="max-w-[504px] ">
-            <h6 className="text-[#061012] font-[600] font-poppins text-[24px] leading-[36px] mb-[10px]">
+            <h6 className="text-primary font-semibold font-poppins text-2xl mb-2.5">
               Launch a CTO <br /> &quot;Powered by RunesBridge-V&quot;
             </h6>
-            <p className="text-[#444444] font-inter, font-[500] text-[16px] leading-[19.36px]">
+            <p className="text-secondary font-inter, font-medium text-base">
               We specialize in helping to launch projects and our niche is
               Community Takeovers. <br />
               <br /> We have animators, raiders, marketers, a growing number of

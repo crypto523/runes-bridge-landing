@@ -31,11 +31,11 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
       <Image src="/mask.png" width={304} height={228} alt="v-mask" priority />
       <div className="w-full max-w-[482px] p-2">
         <h5
-          className="h-[86px] font-inter text-[#061012] text-center font-[600] text-[24px] leading-[86px]"
+          className="h-[86px] font-inter text-primary text-center font-[600] text-[24px] leading-[86px]"
           id="v-welcome"
         ></h5>
         <p
-          className="w-full font-poppins font-[500] text-[16px] leading-[19.36px] text-[#444444] text-center"
+          className="w-full font-poppins font-[500] text-[16px] leading-[19.36px] text-secondary text-center"
           id="v-welcome"
           style={{opacity: 0}}
         >

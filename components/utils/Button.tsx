@@ -9,7 +9,7 @@ interface ButtonProps {
 const RunesButton: React.FC<ButtonProps> = ({ children, className, onClick }) => {
     return (
         <button
-            className={`flex items-center justify-center gap-[10px] bg-[#061012] p-[10px_20px] rounded-[5px] text-[#FFFFFF] font-conthrax font-[600] text-[16px] leading-[19.2px] ${className}`}
+            className={`flex items-center justify-center gap-[10px] bg-primary p-[10px_20px] rounded-[5px] text-[#FFFFFF] font-conthrax font-[600] text-[16px] leading-[19.2px] ${className}`}
             onClick={onClick}
         >
             {children}

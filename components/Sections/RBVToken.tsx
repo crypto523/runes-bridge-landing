@@ -18,7 +18,7 @@ const RBVToken: React.FC<RBVTokenProps> = ({ showSection, hideSection }) => {
         <div id="rbv" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
             <SectionLayout showSection={showSection} nextSection="HERO" currentSection="RBV" hideSection={hideSection}>
                 <div className="w-2/3 flex-1 flex flex-col items-center justify-center">
-                    <h2 className="font-poppins font-[600] text-[48px] text-[#061012] mb-7">RBV Token</h2>
+                    <h2 className="font-poppins font-[600] text-[48px] text-primary mb-7">RBV Token</h2>
                     <div className="w-full flex items-center font-poppins font-[500] text-[24px] text-[#666666] border-[#C4C3CB] border-b-[0.8px]">
                         <div className="w-1/2 h-full flex items-center justify-end p-2 border-r-[0.8px]"><p className="p-2 w-fit text-right">Total 1,000,000,000 <span className="text-nowrap">(1 Billion Tokens)</span></p></div>
                         <div className="w-1/2 h-full p-2 border-l-[0.8px]"><p className="p-2 w-fit ">Total Team Tokens 5%</p></div>

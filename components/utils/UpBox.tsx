@@ -15,8 +15,8 @@ const UpBox: React.FC<UpBoxProps> = (props) => {
                 <props.icon />
                 <props.image />
             </div>
-            <h6 className="font-poppins font-[600] text-[3vh] text-[#061012]">{props.title}</h6>
-            <p className="font-inter font-[500] text-[2.5vh] leading-[19.36px] text-[#444444]">{props.content}</p>
+            <h6 className="font-poppins font-[600] text-[3vh] text-primary">{props.title}</h6>
+            <p className="font-inter font-[500] text-[2.5vh] leading-[19.36px] text-secondary">{props.content}</p>
         </div>
     )
 }

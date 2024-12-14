@@ -9,6 +9,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      primary: 'var(--color-primary)',
+      secondary: 'var(--color-secondary)'
+    },
     extend: {
       fontFamily: {
         conthrax: ['var(--font-conthrax)'],
