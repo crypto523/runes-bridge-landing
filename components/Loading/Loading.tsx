@@ -16,7 +16,7 @@ const Loading: React.FC<LoadingProps> = ({ onFinishLoading }) => {
             ease: "elastic",
         });
         gsap.to("#progress", {
-            duration: 5,  // Duration of the animation (in seconds)
+            duration: 2,  // Duration of the animation (in seconds)
             innerHTML: 100,  // Final value to animate to
             ease: 'power1.out',  // Easing for the animation
             snap: { innerHTML: 10 },  // Snap to whole numbers to avoid decimals

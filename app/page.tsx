@@ -108,7 +108,7 @@ export default function Home() {
     const tl = gsap.timeline();
     tl.to("div#landingv", {
       opacity: 0,
-      duration: 2,
+      duration: 0.5,
       onComplete: () => {
         setVLoading(false);
         showSection("HERO");

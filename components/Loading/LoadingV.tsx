@@ -19,14 +19,15 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
     }).to("p#v-welcome", {
         opacity: 1,
         duration: 2,
-        onComplete: () =>{
-            onFinishV();
-        }   
     });
   });
 
+  const onFinish = () => {
+    onFinishV();
+  } 
+
   return (
-    <div className="absolute top-0 w-[100vw] h-[100vh] flex flex-col items-center justify-center bg-white" id="landingv" style={{backgroundImage: `url("bg-grid.svg")`}}>
+    <div className="absolute top-0 w-[100vw] h-[100vh] flex flex-col items-center justify-center bg-white" id="landingv" style={{backgroundImage: `url("bg-grid.svg")`}} onClick={onFinish} onWheel={onFinish}>
       <Image src="/mask.png" width={304} height={228} alt="v-mask" priority />
       <div className="w-full max-w-[482px] p-2">
         <h5
