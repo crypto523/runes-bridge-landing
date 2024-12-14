@@ -342,3 +342,9 @@ export const WalletIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <path d="M64.1663 36.4584H55.4163C52.208 36.4584 49.583 39.0834 49.583 42.2917C49.583 45.5 52.208 48.125 55.4163 48.125H64.1663" stroke="#061012" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 )
+
+export const Triangle: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="20" height="20" viewBox="0 0 20 20" className={props.className} fill="transparent" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,20 0,0 20,0" fill="#061012" />
+    </svg>
+)

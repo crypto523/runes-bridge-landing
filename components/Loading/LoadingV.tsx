@@ -15,7 +15,7 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
     tl.to("h5#v-welcome", {
       text: "V Says Welcome Home",
       ease: "sine",
-      duration: 2,
+      duration: 1.5,
     }).to("p#v-welcome", {
         opacity: 1,
         duration: 2,

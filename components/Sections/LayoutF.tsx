@@ -32,11 +32,21 @@ const SectionLayoutF: React.FC<LayoutProps> = ({ children, className = "", curre
             }
         };
 
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setIsMenuOpened(false);
+            }
+        };
+
         // Calculate dimensions on mount and resize
         updateDimensions();
         window.addEventListener('resize', updateDimensions);
+        window.addEventListener("keydown", handleKeyDown);
 
-        return () => window.removeEventListener('resize', updateDimensions);
+        return () => {
+            window.removeEventListener('resize', updateDimensions);
+            window.removeEventListener("keydown", handleKeyDown);
+        }
     }, []);
 
     const showHero = () => {
