@@ -20,7 +20,7 @@ const Airdrop: React.FC<AirdropProps> = ({showSection, hideSection}) => {
                 <div className="w-full flex-1 flex items-center justify-around">
                     <p className="max-w-[504px] text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">
                         This is a facility designed to reward RBV holders with tokens “Powered by RunesBridge-V”. <br />
-                        The Airdrop Guild is a facility by which tokens are distributed to our community on a staggered, timed and tiered basis, this by design a way to secure a launch by carefully adding a large number of small wallets to a community. Airdrops are also by design made to discourage selling pressure, encourage long term holding and increase holder count and minimize the size of each holder.
+                        The Airdrop Guild is a facility by which tokens are distributed to our community on a staggered, timed, and tiered basis, drafted as a way to stabilize and secure a launch by carefully adding a large number of small wallets to a community.
                     </p>
                     <div className="w-auto h-full flex flex-col items-center justify-center gap-5">
                         <h2 className="font-poppins font-[600] text-[6vh] leading-[86px] text-primary">Airdrop Guild</h2>

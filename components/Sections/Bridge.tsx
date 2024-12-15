@@ -26,7 +26,7 @@ const Bridge: React.FC<BridgeProps> = ({ showSection, hideSection }) => {
             <p className="max-w-[504px] text-[#727272] font-inter font-[500] text-[16px] leading-[19.36px]">
               Just like the namesake RunesBridge project we offer bridge
               facilities between Runes and Ethereum and shortly after launch we
-              will have a facility between Solana and Ethereum. Join us on discord
+              will have a facility between Solana and Ethereum. Join us on Discord
               and open up a bridge ticket to ask for token integration for our
               bridge or to address any technical or other questions about cross
               chain bridge transactions.
