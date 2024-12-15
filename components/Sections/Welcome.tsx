@@ -23,8 +23,8 @@ const Welcome: React.FC<WelcomeProps> = ({showSection, hideSection}) => {
             <SectionLayoutF currentSection="WELCOME" nextSection="FEATURE" hideSection={hideSection} showSection={showSection}>
                 <div className="w-full flex-1 flex flex-col items-center justify-evenly px-[5vw]">
                     <div className="w-full flex flex-col items-end">
-                        <h2 className="font-poppins font-[600] text-[48px] mb-[3vh] mt-[0] text-center text-primary">V says welcome home</h2>
-                        <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-secondary text-right">We welcome Community Take-Over projects—or really any project that wants our support to launch the right way. The first CTO projects will be launched between December 2024 and January 2025.</p>
+                        <h2 className="font-poppins font-[600] text-[48px] mb-[3vh] mt-[0] text-center text-primary">V Says Welcome Home</h2>
+                        <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-secondary text-right">We welcome Community Takeover projects—or really any project that wants our support to launch the right way. The first CTO projects will be launched between December 2024 and January 2025.</p>
                     </div>
                     <div className="w-full flex items-center justify-center gap-4">
                         <UpBox icon={WideDistributionIcon} image={PeopleFrameIcon} title={titles.WIDEDISTRIBUTION} content={contents.WIDEDISTRIBUTION} />
