@@ -72,7 +72,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
 
     return (
         <div
-            className={`hidden lg:flex w-full h-full p-[40px_60px] overflow-hidden ${className}`}
+            className={`flex w-full h-full p-5 md:p-10 lg:p-[40px_60px] overflow-hidden ${className}`}
         >
             <div ref={containerRef} className="relative w-full h-full">
                 <svg
@@ -226,11 +226,11 @@ const SectionLayout: React.FC<LayoutProps> = ({
                     width={50}
                     height={1050}
                     alt="vector1"
-                    className="absolute right-0 top-[50%] -z-10"
+                    className="hidden md:block absolute right-0 top-[50%] -z-10"
                 />
 
                 <div className="absolute inset-0 w-full h-full flex z-20">
-                    <div className="w-[4.55%] h-full flex flex-col items-center justify-between border-[#626262] border-r-[1px] ">
+                    <div className="hidden md:flex w-[4.55%] h-full flex-col items-center justify-between border-[#626262] border-r-[1px] ">
                         <div className="pt-[65%] cursor-pointer">
                             {!isMenuOpened ? (
                                 <svg
@@ -303,9 +303,12 @@ const SectionLayout: React.FC<LayoutProps> = ({
                                 }`}
                         >
                             <Navbar
-                                className="!px-[44px] !border-b-0"
+                                className="!px-5 !border-b-0 hidden md:flex"
                                 subClass="!justify-end gap-14"
                                 onLogoClick={showHero}
+                                currentSection={currentSection}
+                                hideSection={hideSection}
+                                showSection={showSection}
                             />
 
                             {children}
@@ -448,6 +451,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         </div>
                         <MenuBar
                             isOpened={isMenuOpened}
+                            setIsOpened={setIsMenuOpened}
                             currentSection={currentSection}
                             hideSection={hideSection}
                             showSection={showSection}

@@ -22,6 +22,7 @@ import { BuildingIcon, CertIcon, ColorSquareIcon, CubeConvertIcon, HierarchyIcon
 import { contents, titles } from "@/components/utils/constants";
 import MobileBox from "@/components/utils/MobileBox";
 import Planet from "@/components/Planet/Planet";
+import Navbar from "@/components/Navbar/Navbar";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -118,6 +119,8 @@ export default function Home() {
 
   return (
     <main className="relative w-full min-h-[100vh] overflow-auto" onWheel={handleWheel}>
+      <Navbar currentSection="HERO" hideSection={hideSection} showSection={showSection} onLogoClick={() => { }} className="md:hidden" />
+        
       {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("WELCOME") && <Welcome showSection={showSection} hideSection={hideSection} />}
