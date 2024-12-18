@@ -3,13 +3,14 @@ import React from "react";
 const Banner: React.FC = () => {
   return (
     <div
-      className="max-w-[999px] w-full flex flex-col px-4 m-auto lg:mt-[46px] opacity-0 gap-3 translate-y-[40px]"
+      className="max-w-[999px] w-full flex flex-col px-4 m-auto lg:mt-[46px] opacity-0 gap-3 translate-y-[40px] text-primary text-center"
       id="banner"
     >
-      <h1 className="font-poppins font-[600] text-[36px] lg:text-[74px] leading-[86px] text-center text-primary">
+      <h1 className="font-poppins font-semibold text-4xl lg:text-7xl">
         RunesBridge-V
       </h1>
-      <p className="mt-[15px] font-inter font-[500] text-[16px] leading-[19.36px] text-center text-secondary">
+      <h6 className="font-inter font-semibold">-The First Community Take-Over Platform-</h6>
+      <p className="mt-[15px] font-inter font-medium text-base leading-5 text-secondary">
         RunesBridge-V is an extensible, decentralized platform designed to
         launch new projects, with a special focus on relaunching existing
         projects with a Community Takeover (CTO). We provide marketing, launch
