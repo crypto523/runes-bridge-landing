@@ -129,7 +129,7 @@ export default function Home() {
       {viewSection.includes("TASKBOARD") && <Taskboard showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("RBV") && <RBVToken showSection={showSection} hideSection={hideSection} />}
 
-      {viewSection==="HERO" && <div className="w-full px-8 py-[112px] flex flex-col items-center lg:hidden">
+      {/* {viewSection==="HERO" && <div className="w-full px-8 py-[112px] flex flex-col items-center lg:hidden">
         <div className="w-full" id="launch">
           <h6 className="text-primary font-[600] font-poppins text-[20px] leading-[30px] mb-[10px]">
             Launch a CTO <br /> &quot;Powered by RunesBridge-V&quot;
@@ -283,7 +283,7 @@ export default function Home() {
             <div className="w-1/2 h-full p-2 border-l-[1.6px] -ml-[1.2px]"><p className="p-2 w-fit">Total Uniswap LP Seed 300,000,00</p></div>
           </div>
         </div>
-      </div>}
+      </div>} */}
 
       {preloading && <Loading onFinishLoading={onFinishPreloading} />}
       {vLoading && <LoadingV onFinishV={onFinishV} />}
