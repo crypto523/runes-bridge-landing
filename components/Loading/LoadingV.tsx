@@ -17,17 +17,23 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
       ease: "sine",
       duration: 1.5,
     }).to("p#v-welcome", {
-        opacity: 1,
-        duration: 2,
+      opacity: 1,
+      duration: 2,
     });
   });
 
   const onFinish = () => {
     onFinishV();
-  } 
+  };
 
   return (
-    <div className="absolute top-0 w-[100vw] h-[100vh] flex flex-col items-center justify-center bg-white" id="landingv" style={{backgroundImage: `url("bg-grid.svg")`}} onClick={onFinish} onWheel={onFinish}>
+    <div
+      className="absolute top-0 w-[100vw] h-[100vh] flex flex-col items-center justify-center bg-white"
+      id="landingv"
+      style={{ backgroundImage: `url("bg-grid.svg")` }}
+      onClick={onFinish}
+      onWheel={onFinish}
+    >
       <Image src="/mask.png" width={304} height={228} alt="v-mask" priority />
       <div className="w-full max-w-[482px] p-2">
         <h5
@@ -37,14 +43,13 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
         <p
           className="w-full font-poppins font-[500] text-[16px] leading-[19.36px] text-secondary text-center"
           id="v-welcome"
-          style={{opacity: 0}}
+          style={{ opacity: 0 }}
         >
           I am V, a symbol of resistance, a force born from the ashes of
           tyranny. My face, though hidden behind this mask, carries the weight
           of an idea. An idea that cannot be silenced, not by oppression, not by
-          fear. Those who once held me captive will face their reckoning, and
-          those that strangle freedom will crumble before the will of the
-          people. RunesBridge is dead. Long live RunesBridge-V.
+          fear. Those who once held me captive will face their reckoning.
+          RunesBridge is dead. Long live RunesBridge-V.
         </p>
       </div>
     </div>
