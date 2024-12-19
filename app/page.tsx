@@ -118,8 +118,8 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full min-h-[100vh] overflow-auto" onWheel={handleWheel}>
-      <Navbar currentSection="HERO" hideSection={hideSection} showSection={showSection} onLogoClick={() => { }} className="md:hidden" />
+    <main className="relative w-full min-h-screen flex flex-col" onWheel={handleWheel}>
+      <Navbar currentSection={viewSection} hideSection={hideSection} showSection={showSection} onLogoClick={() => setViewSection("HERO")} className="md:hidden" />
         
       {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
       {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}

@@ -44,6 +44,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
         const updateDimensions = () => {
             if (containerRef.current) {
                 const rect = containerRef.current.getBoundingClientRect();
+                console.log(rect.width, rect.height)
                 setDimensions({ width: rect.width, height: rect.height });
             }
         };
@@ -72,13 +73,13 @@ const SectionLayout: React.FC<LayoutProps> = ({
 
     return (
         <div
-            className={`flex w-full h-full p-5 md:p-10 lg:p-[40px_60px] overflow-hidden ${className}`}
+            className={`flex w-full h-full p-5 pt-0 md:p-10 lg:p-[40px_60px] overflow-hidden ${className}`}
         >
             <div ref={containerRef} className="relative w-full h-full">
                 <svg
                     width="100%"
                     height="100%"
-                    className="z-10"
+                    className="hidden md:block z-10"
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <polygon
@@ -110,7 +111,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                 </svg>
                 <svg
                     width="100%"
-                    height="105%"
+                    height="100%"
                     className="absolute top-0 z-20"
                     xmlns="http://www.w3.org/2000/svg"
                 >
@@ -213,10 +214,10 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         strokeWidth={1.5}
                     />
                     <polygon
-                        points={`${dimensions.width * 0.25 + dimensions.height * 0.01},${dimensions.height * 1.02
-                            } ${dimensions.width * 0.3 + dimensions.height * 0.01},${dimensions.height * 0.91
-                            } ${dimensions.width * 0.95},${dimensions.height * 0.91} ${dimensions.width * 0.95
-                            },${dimensions.height * 1.02}`}
+                        points={`${dimensions.width * 0.25 + dimensions.height * 0.01},${dimensions.height * 1
+                            } ${dimensions.width * 0.3 + dimensions.height * 0.004},${dimensions.height * 0.907
+                            } ${dimensions.width * 0.95},${dimensions.height * 0.907} ${dimensions.width * 0.95
+                            },${dimensions.height * 1}`}
                         fill="black"
                     />
                 </svg>
@@ -229,7 +230,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                     className="hidden md:block absolute right-0 top-[50%] -z-10"
                 />
 
-                <div className="absolute inset-0 w-full h-full flex z-20">
+                <div className="w-full h-full flex z-30">
                     <div className="hidden md:flex w-[4.55%] h-full flex-col items-center justify-between border-[#626262] border-r-[1px] ">
                         <div className="pt-[65%] cursor-pointer">
                             {!isMenuOpened ? (

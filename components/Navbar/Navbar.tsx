@@ -119,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     currentSection={currentSection}
                     hideSection={hideSection}
                     showSection={showSection}
-                    className="top-[100%] left-0 bottom-auto w-full h-[70vh] z-10"
+                    className="top-[100%] left-0 w-full h-[calc(100vh-100px)] z-[200]"
                 />}
         </div>
     );
