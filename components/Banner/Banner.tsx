@@ -14,7 +14,7 @@ const Banner: React.FC = () => {
           -The First Community Take-Over Platform-
         </h6>
       </div>
-      <p className="mt-[15px] font-inter font-medium text-base leading-5 text-secondary select-none">
+      <p className="mt-[15px] font-inter font-medium text-base text-center leading-5 text-secondary select-none">
         <span className="font-semibold text-primary text-xl cursor-pointer hover:font-bold transition-all">
           RunesBridge-V
         </span>{" "}

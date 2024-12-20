@@ -219,3 +219,27 @@ export const Bank: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <path d="M188.768 50.7929L109.268 18.9929C107.502 18.2862 104.498 18.2862 102.732 18.9929L23.2315 50.7929C20.1398 52.0296 17.6665 55.6512 17.6665 59.0079V88.3346C17.6665 93.1929 21.6415 97.1679 26.4998 97.1679H185.5C190.358 97.1679 194.333 93.1929 194.333 88.3346V59.0079C194.333 55.6512 191.86 52.0296 188.768 50.7929ZM106 75.0846C98.6682 75.0846 92.7498 69.1662 92.7498 61.8346C92.7498 54.5029 98.6682 48.5846 106 48.5846C113.332 48.5846 119.25 54.5029 119.25 61.8346C119.25 69.1662 113.332 75.0846 106 75.0846Z" fill="#061012" />
     </svg>
 )
+
+export const MenuToggle: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        className={props.className} onClick={props.onClick}>
+        <path d="M5 17H19M5 12H19M5 7H13" stroke="#626262" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+)
+
+export const MenuClose: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        className={props.className} onClick={props.onClick}>
+        <g id="Menu / Close_LG">
+            <path id="Vector" d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                stroke="#061012" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+    </svg>
+)
+
+export const ArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg width="16" height="22" viewBox="0 0 16 22" fill="none" className={props.className} xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 1C9 0.447715 8.55228 -2.41411e-08 8 0C7.44772 2.41411e-08 7 0.447715 7 1L9 1ZM7.29289 21.7071C7.68342 22.0976 8.31658 22.0976 8.70711 21.7071L15.0711 15.3431C15.4616 14.9526 15.4616 14.3195 15.0711 13.9289C14.6805 13.5384 14.0474 13.5384 13.6569 13.9289L8 19.5858L2.34315 13.9289C1.95262 13.5384 1.31946 13.5384 0.928933 13.9289C0.538408 14.3195 0.538408 14.9526 0.928933 15.3431L7.29289 21.7071ZM7 1L7 21L9 21L9 1L7 1Z"
+            fill="#FA0B0F"/>
+    </svg>
+)

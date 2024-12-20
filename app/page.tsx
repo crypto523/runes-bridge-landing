@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/all";
@@ -18,11 +17,8 @@ import Welcome from "@/components/Sections/Welcome";
 import Airdrop from "@/components/Sections/Airdrop";
 import Bridge from "@/components/Sections/Bridge";
 import Taskboard from "@/components/Sections/TaskBoard";
-import { BuildingIcon, CertIcon, ColorSquareIcon, CubeConvertIcon, HierarchyIcon, MoneyReceiveFrameIcon, PeopleIcon, ShieldTickIcon, WalletIcon } from "@/components/utils/Icons";
-import { contents, titles } from "@/components/utils/constants";
-import MobileBox from "@/components/utils/MobileBox";
-import Planet from "@/components/Planet/Planet";
 import Navbar from "@/components/Navbar/Navbar";
+import { AppContextProvider, useAppContext } from "@/context/AppContext";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
@@ -43,7 +39,7 @@ export default function Home() {
   }
 
   const hideSection = (section: Section) => {
-    
+
   };
 
   const navigateSection = (direction: number, currentSection: Section) => {
@@ -74,7 +70,7 @@ export default function Home() {
             showSection(sections[tartgetIndex]);
           }
         });
-      }
+    }
   }
 
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
@@ -118,21 +114,22 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full min-h-screen flex flex-col" onWheel={handleWheel}>
-      <Navbar currentSection={viewSection} hideSection={hideSection} showSection={showSection} onLogoClick={() => setViewSection("HERO")} className="md:hidden" />
-        
-      {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("WELCOME") && <Welcome showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("FEATURE") && <Features showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("AIRDROP") && <Airdrop showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("STAKING") && <Staking showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("BRIDGE") && <Bridge showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("GOVERNANCE") && <Governance showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("TASKBOARD") && <Taskboard showSection={showSection} hideSection={hideSection} />}
-      {viewSection.includes("RBV") && <RBVToken showSection={showSection} hideSection={hideSection} />}
+    <AppContextProvider>
+      <main className="relative w-full h-full flex flex-col" onWheel={handleWheel}>
+        <Navbar currentSection={viewSection} hideSection={hideSection} showSection={showSection} onLogoClick={() => setViewSection("HERO")} className={`md:hidden`} />
 
-      {/* {viewSection==="HERO" && <div className="w-full px-8 py-[112px] flex flex-col items-center lg:hidden">
+        {viewSection.includes("HERO") && <Hero showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("LABS") && <CTOLabs showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("WELCOME") && <Welcome showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("FEATURE") && <Features showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("AIRDROP") && <Airdrop showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("STAKING") && <Staking showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("BRIDGE") && <Bridge showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("GOVERNANCE") && <Governance showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("TASKBOARD") && <Taskboard showSection={showSection} hideSection={hideSection} />}
+        {viewSection.includes("RBV") && <RBVToken showSection={showSection} hideSection={hideSection} />}
+
+        {/* {viewSection==="HERO" && <div className="w-full px-8 py-[112px] flex flex-col items-center lg:hidden">
         <div className="w-full" id="launch">
           <h6 className="text-primary font-[600] font-poppins text-[20px] leading-[30px] mb-[10px]">
             Launch a CTO <br /> &quot;Powered by RunesBridge-V&quot;
@@ -288,8 +285,9 @@ export default function Home() {
         </div>
       </div>} */}
 
-      {preloading && <Loading onFinishLoading={onFinishPreloading} />}
-      {vLoading && <LoadingV onFinishV={onFinishV} />}
-    </main>
+        {preloading && <Loading onFinishLoading={onFinishPreloading} />}
+        {vLoading && <LoadingV onFinishV={onFinishV} />}
+      </main>
+    </AppContextProvider>
   );
 }

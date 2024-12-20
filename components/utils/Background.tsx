@@ -1,13 +1,19 @@
-import { useEffect, useState } from "react";
+import { useAppContext } from "@/context/AppContext";
+import { useEffect, useRef, useState } from "react";
 
 interface BackgroundProps {
     ltr: boolean
 }
 
 const Background: React.FC<BackgroundProps> = ({ ltr }) => {
+    const { orientation } = useAppContext();
+    const backgroundRef = useRef<HTMLDivElement | null>(null);
+
     const [topGap, setTopGap] = useState<string>("15%");
     const [bottomGap, setBottomGap] = useState<string>("10%");
-    const [cornerWidth, setCornerWidth] = useState<string>("2%");
+    const [cornerWidth, setCornerWidth] = useState<number>(2);
+
+    const [dimensions, setDimensions] = useState<{ width: number, heigt: number }>({ width: window.innerWidth, heigt: window.innerWidth })
 
     useEffect(() => {
         const handleGapSize = () => {
@@ -16,16 +22,27 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
             if (screenWidth < 768) {
                 setTopGap("48px");
                 setBottomGap("44px");
-                setCornerWidth("5%");
-            } else if (screenWidth <= 1024) {
+                setCornerWidth(5);
+            } else if (screenWidth < 1024) {
                 setTopGap("90px");
                 setBottomGap("83.5px");
-                setCornerWidth("2%");
+                setCornerWidth(2);
             } else {
-                setTopGap("15%");
-                setBottomGap("10%");
-                setCornerWidth("2%");
+                if (orientation === "landscape") {
+                    setTopGap("15%");
+                    setBottomGap("10%");
+                } else {
+                    setTopGap("90px");
+                    setBottomGap("83.5px");
+                }
+
+                setCornerWidth(2);
             }
+
+            setDimensions({
+                width: backgroundRef.current?.clientWidth!,
+                heigt: backgroundRef.current?.clientHeight!
+            });
         }
 
         handleGapSize();
@@ -58,14 +75,14 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
                 <line
                     x1="0"
                     y1="2%"
-                    x2={cornerWidth}
+                    x2={`${cornerWidth}%`}
                     y2="0"
                     stroke="var(--color-secondary)"
                     strokeWidth={0.7}
                     vectorEffect="non-scaling-stroke"
                 />
                 <line
-                    x1={cornerWidth}
+                    x1={`${cornerWidth}%`}
                     y1="0"
                     x2="53%"
                     y2="0"
@@ -85,14 +102,14 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
                 <line
                     x1="60%"
                     y1={topGap}
-                    x2={`calc(100% - ${cornerWidth})`}
+                    x2={`calc(100% - ${cornerWidth}%)`}
                     y2={topGap}
                     stroke="var(--color-secondary)"
                     strokeWidth={0.8}
                     vectorEffect="non-scaling-stroke"
                 />
                 <line
-                    x1={`calc(100% - ${cornerWidth})`}
+                    x1={`calc(100% - ${cornerWidth}%)`}
                     y1={topGap}
                     x2="100%"
                     y2={`calc(${topGap} + 2%)`}
@@ -110,21 +127,31 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
                     vectorEffect="non-scaling-stroke"
                 />
                 <line
+                    className="hidden lg:block"
                     x1="100%"
                     y1={`calc(98% - ${bottomGap})`}
-                    x2={`calc(100% - ${cornerWidth})`}
+                    x2="100%"
+                    y2={`calc(100% - ${bottomGap})`}
+                    stroke="#C4C3CB"
+                    strokeWidth={1.5}
+                    vectorEffect="non-scaling-stroke"
+                />
+                <line
+                    x1="100%"
+                    y1={`calc(98% - ${bottomGap})`}
+                    x2={`calc(100% - ${cornerWidth}%)`}
                     y2={`calc(100% - ${bottomGap})`}
                     stroke="var(--color-secondary)"
                     strokeWidth={0.8}
                     vectorEffect="non-scaling-stroke"
                 />
                 <line
-                    x1={`calc(100% - ${cornerWidth})`}
+                    x1={`calc(100% - ${cornerWidth}%)`}
                     y1={`calc(100% - ${bottomGap})`}
                     x2="30%"
                     y2={`calc(100% - ${bottomGap})`}
                     stroke="var(--color-secondary)"
-                    strokeWidth={0.8}
+                    strokeWidth={1}
                     vectorEffect="non-scaling-stroke"
                 />
                 <line
@@ -152,33 +179,17 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
                 fill="black"
             /> */}
             </svg>
-            <svg
-                width="100%"
-                height="100%"
-                className="absolute top-0 z-10"
-                style={ltr ? {} : { transform: "rotateY(180deg)" }}
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <polygon
-                    points={`
-                        0,100% 
-                        0,2% 
-                        ${cornerWidth},0 
-                        53%,0 
-                        60%,${topGap} 
-                        calc(100% - ${cornerWidth}),${topGap} 
-                        100%,calc(${topGap} + 2%) 
-                        100%,calc(98% - ${bottomGap}) 
-                        calc(100% - ${cornerWidth}),calc(100% - ${bottomGap}) 
-                        30%,calc(100% - ${bottomGap}) 
-                        24%,100% 
-                        0,100%
-                    `}
-                    stroke="none"
-                    fill="white"
-                    vectorEffect="non-scaling-stroke"
-                />
-            </svg>
+            <div ref={backgroundRef} className={`absolute left-0 right-0 -z-10`} style={{ top: topGap, bottom: bottomGap, backgroundColor: "white" }}>
+                {/* <svg
+                    width="100%"
+                    height="100%"
+                    className="absolute bottom-0 right-0 z-20"
+                    style={ltr ? {} : { transform: "rotateY(180deg)" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <polygon className="absolute bottom-0 right-0" points={`0,${dimensions.heigt} 0,0 ${dimensions.width},0 ${dimensions.width},${dimensions.heigt}`} fill="red" stroke="red" />
+                </svg> */}
+            </div>
         </div>
     )
 }

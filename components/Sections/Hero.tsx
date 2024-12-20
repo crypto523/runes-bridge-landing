@@ -7,6 +7,7 @@ import RunesButton from "../utils/Button";
 import Planet from "../Planet/Planet";
 import gsap from "gsap";
 import { Section } from "@/app/page";
+import { useAppContext } from "@/context/AppContext";
 
 interface HeroProps {
     showSection: (section: Section) => void;
@@ -14,6 +15,8 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
+    const { orientation } = useAppContext();
+
     useEffect(() => {
         const animation = gsap
             .timeline()
@@ -58,8 +61,8 @@ const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
 
     return (
         <section className="w-[100vw] min-h-[100vh] flex flex-col items-centers" id="hero" style={{ backgroundImage: `url("bg-grid.svg")`, zIndex: 100 }}>
-            <Navbar currentSection="HERO" hideSection={hideSection} showSection={showSection} onLogoClick={() => { }} className="hidden md:flex" />
-            <div className="w-full flex-1 flex flex-col items-center justify-evenly">
+            <Navbar currentSection="HERO" hideSection={hideSection} showSection={showSection} onLogoClick={() => { }} className={`hidden md:flex md:!py-10 md:h-full ${orientation === "portrait" ? 'lg:border-b-0 lg:!pb-0' : ''}`} subClass="md:gap-3 md:justify-end" />
+            <div className={`w-full flex-1 flex flex-col items-center justify-evenly ${orientation === "portrait" ? 'lg:justify-start gap-10' : ''}`}>
                 <div id="up">
                     <Banner />
 
@@ -89,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
 
                 <div className="relative">
                     <Planet />
-                    <div className="absolute -right-[15%] bottom-0 pb-[30px] hidden lg:flex flex-col items-center cursor-pointer" onClick={moreExplorer}>
+                    <div className="absolute -right-[15%] md:-right-[5%] bottom-0 pb-[30px] hidden md:flex flex-col items-center cursor-pointer" onClick={moreExplorer}>
                         <div className="w-[90px] pr-[180px] font-conthrax font-600 text-[10px] leading-[12px] text-[#000000] whitespace-nowrap rotate-90 ">explore more</div>
                         <div className="">
                             <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import RunesButton from "../utils/Button";
 import classNames from "classnames"; // Import classnames utility (optional)
 import { Discord, Telegram } from "../utils/Icon";
 import MenuBar from "../utils/MenuBar";
 import { Section } from "@/app/page";
+import { useAppContext } from "@/context/AppContext";
 
 interface NavbarProps {
     className?: string; // Add a className prop for customization
@@ -25,6 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({
     showSection,
     onLogoClick,
 }) => {
+    const { orientation } = useAppContext();
     const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
     const scrollTo = (id: string) => {
@@ -36,14 +38,14 @@ const Navbar: React.FC<NavbarProps> = ({
     }
 
     const defaultClasses =
-        "relative w-full p-5 md:px-[64px] xl:px-[165px] lg:h-[15%] flex items-center lg:border-b-2 lg:border-[#C4C3CB]";
+        `relative w-full p-5 md:px-[42px] xl:px-[165px] md:h-[90px] lg:h-[15%] flex items-center lg:border-b-2 lg:border-[#C4C3CB]`;
     return (
         <div className={classNames(defaultClasses, className)}>
             <div
                 className={classNames("w-full flex items-center justify-between", mainClass)}
             >
                 <div className="flex items-center cursor-pointer hover:scale-105 transition-all" onClick={onLogoClick}>
-                    <p className="font-conthrax font-[600] text-[20px] md:text-[28px] leading-[24px] text-primary">
+                    <p className="font-conthrax font-[600] text-xl md:text-2xl lg:text-[28px] leading-[24px] text-primary">
                         RunesBridge
                     </p>
                     <Image src="logo.svg" width={60} height={60} alt="logo" />
@@ -53,11 +55,11 @@ const Navbar: React.FC<NavbarProps> = ({
                 </div>
                 <div
                     className={classNames(
-                        "hidden w-[45%] lg:flex items-center justify-between",
+                        "hidden w-[45%] md:flex items-center justify-between",
                         subClass
                     )}
                 >
-                    <div className="flex items-center gap-5">
+                    <div className="flex items-center md:gap-3 lg:gap-5">
                         <div className="flex items-center gap-2 text-black font-poppins font-medium text-base cursor-pointer">
                             <Telegram />
                             <span className="hidden xl:inline-flex">Telegram</span>
@@ -71,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </div>
                 <button
                     id="menu-toggle"
-                    className="flex items-center p-0 bg-transparent lg:hidden"
+                    className="flex items-center p-0 bg-transparent md:hidden"
                     onClick={() => setIsMenuOpened((prev) => !prev)}
                 >
                     {isMenuOpened ? (
