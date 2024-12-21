@@ -477,7 +477,14 @@ h2,
 
 h3,
 .h3 {
-  font-size: var(--step-2);
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #061012;
 }
 
 h4,

@@ -23,19 +23,19 @@ const CTOLabs: React.FC<CTOLabsProps> = ({ showSection, hideSection }) => {
       <SectionLayout currentSection="LABS" nextSection="WELCOME" showSection={showSection} hideSection={hideSection}>
 
         <div className={`w-full h-full flex-1 flex flex-col md:flex-col-reverse lg:flex-row-reverse lg:h-[75%] lg:flex-none items-center justify-evenly gap-4 px-5 pt-12 pb-11 md:pt-0 md:pb-[84px] lg:pb-0 ${orientation === "portrait" ? 'lg:flex-col-reverse' : ''}`}>
-          <div className={`flex flex-col items-start gap-2.5 ${orientation === "portrait" ? '' : 'lg:w-[50%]'}`}>
-            <h2 className="md:text-[28px] md:leading-8 lg:text-4xl">
-              <span>Launch a CTO "Powered by </span>
+          <div className={`flex flex-col items-start gap-2.5 ${orientation === "portrait" ? '' : 'lg:w-[60%]'} xl:w-[50%]`}>
+            <h2 className="md:text-3xl md:leading-8 xl:text-4xl 2xl:text-5xl">
+              <span>Launch a CTO &quot;Powered by </span>
               <span className="inline-flex -mb-1 items-center">
-                RunesBridge-V"
+                RunesBridge-V&quot;
                 <VMask className="w-5 h-6 ml-1 md:w-9 md:h-11" />
               </span>
             </h2>
-            <div className="flex flex-col items-start gap-2">
-              <p className="md:text-base">We specialize in helping to launch projects and our niche is the “CTO”.</p>
-              <p className="md:text-base">We have animators, raiders, marketers, a growing number of KOLs and we also have a growing suite of tech in the workshop for anyone to play with. We offer these tools as white label products and all the hands-on support needed for your project to launch and maintain successfully.</p>
-              <p className="md:text-base">Want to know more ?</p>
-              <p className="md:text-base">Join our discord and open a CTO-Onboarding Ticket to get started.</p>
+            <div className="flex flex-col items-start gap-2 lg:gap-0 xl:gap-2 ">
+              <p className="md:text-base 2xl:text-lg">We specialize in helping to launch projects and our niche is the “CTO”.</p>
+              <p className="md:text-base 2xl:text-lg">We have animators, raiders, marketers, a growing number of KOLs and we also have a growing suite of tech in the workshop for anyone to play with. We offer these tools as white label products and all the hands-on support needed for your project to launch and maintain successfully.</p>
+              <p className="md:text-base 2xl:text-lg">Want to know more ?</p>
+              <p className="md:text-base 2xl:text-lg">Join our discord and open a CTO-Onboarding Ticket to get started.</p>
             </div>
           </div>
 

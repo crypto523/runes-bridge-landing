@@ -20,12 +20,8 @@ interface LayoutProps {
     hideSection: (section: Section) => void;
     nextSection: Section;
     showSection: (section: Section) => void;
+    ltr?: boolean;
 }
-
-type Dimensions = {
-    width: number;
-    height: number;
-};
 
 const SectionLayout: React.FC<LayoutProps> = ({
     children,
@@ -34,6 +30,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
     hideSection,
     nextSection,
     showSection,
+    ltr = true
 }) => {
     const { orientation } = useAppContext();
     const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
@@ -61,10 +58,10 @@ const SectionLayout: React.FC<LayoutProps> = ({
     return (
         <div className={`relative w-full h-full flex flex-col ${className}`} >
             <Image src="/vector1.svg" width={50} height={1050} alt="vector1"
-                className="hidden lg:block absolute right-0 top-[50%] -z-10" />
+                className={`hidden lg:block absolute top-[50%] -z-10 ${ltr ? 'right-0' : 'left-0'}`} />
 
-            <div className="relative w-full h-full flex flex-col md:flex-row z-30">
-                <div className="hidden md:flex w-[5%] lg:w-[4.55%] h-full flex-col items-center justify-between border-[#626262] border-r-[1px] ">
+            <div className={`relative w-full h-full flex flex-col z-30 ${ltr ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                <div className={`hidden md:flex w-[5%] lg:w-[4.55%] h-full flex-col items-center justify-between border-[#626262] ${ltr ? 'border-r-[1px]' : 'border-l-[1px]'}`}>
                     <div className="pt-[65%] cursor-pointer">
                         {!isMenuOpened ?
                             <MenuToggle className="cursor-pointer" onClick={() => setIsMenuOpened(true)} />
@@ -77,7 +74,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                             explore more
                         </div>
                         <div className="">
-                            <ArrowIcon />
+                            <ArrowIcon className="" />
                         </div>
                     </div>
                 </div>
@@ -85,8 +82,9 @@ const SectionLayout: React.FC<LayoutProps> = ({
                 <div className="relative w-full h-full flex flex-col">
                     <div className={`w-full h-full flex flex-col items-center transition-all ${isMenuOpened && "blur-md"}`}>
                         <Navbar
-                            className={`!pl-5 !pr-0 !border-b-0 hidden md:flex ${orientation === "portrait" ? 'lg:h-[90px]' : ''}`}
-                            subClass="!justify-end gap-14 md:gap-3"
+                            className={`!border-b-0 hidden md:flex ${orientation === "portrait" ? 'lg:h-[90px]' : ''} ${ltr ? '!pl-5 !pr-0' : '!pr-5 !pl-0 '}`}
+                            mainClass={ltr ? '' : 'flex-row-reverse'}
+                            subClass={`!justify-end gap-14 md:gap-3 lg:gap-5 xl:gap-14 ${ltr ? '' : 'flex-row-reverse'}`}
                             onLogoClick={showHero}
                             currentSection={currentSection}
                             hideSection={hideSection}
@@ -100,11 +98,12 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         setIsOpened={setIsMenuOpened}
                         currentSection={currentSection}
                         hideSection={hideSection}
-                        showSection={showSection} />
+                        showSection={showSection}
+                        isRight={!ltr} />
                 </div>
             </div>
 
-            <Background ltr={true} />
+            <Background ltr={ltr} />
         </div>
     );
 };

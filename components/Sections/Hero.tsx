@@ -61,8 +61,8 @@ const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
 
     return (
         <section className="w-[100vw] min-h-[100vh] flex flex-col items-centers" id="hero" style={{ backgroundImage: `url("bg-grid.svg")`, zIndex: 100 }}>
-            <Navbar currentSection="HERO" hideSection={hideSection} showSection={showSection} onLogoClick={() => { }} className={`hidden md:flex md:!py-10 md:h-full ${orientation === "portrait" ? 'lg:border-b-0 lg:!pb-0' : ''}`} subClass="md:gap-3 md:justify-end" />
-            <div className={`w-full flex-1 flex flex-col items-center justify-evenly ${orientation === "portrait" ? 'lg:justify-start gap-10' : ''}`}>
+            <Navbar currentSection="HERO" hideSection={hideSection} showSection={showSection} onLogoClick={() => { }} className={`hidden md:flex md:!py-10 md:h-full !max-h-fit ${orientation === "portrait" ? '!lg:border-b-0' : ''}`} subClass="md:gap-3 md:justify-end" />
+            <div className={`w-full flex-1 flex flex-col items-center justify-evenly ${orientation === "portrait" ? 'lg:justify-evenly' : ''}`}>
                 <div id="up">
                     <Banner />
 

@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 className={classNames("w-full flex items-center justify-between", mainClass)}
             >
                 <div className="flex items-center cursor-pointer hover:scale-105 transition-all" onClick={onLogoClick}>
-                    <p className="font-conthrax font-[600] text-xl md:text-2xl lg:text-[28px] leading-[24px] text-primary">
+                    <p className="font-conthrax font-[600] text-xl md:text-2xl lg:text-[28px] leading-[24px] 2xl:text-3xl text-primary">
                         RunesBridge
                     </p>
                     <Image src="logo.svg" width={60} height={60} alt="logo" />
