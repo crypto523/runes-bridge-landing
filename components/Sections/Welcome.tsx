@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Section } from "@/app/page";
 import gsap from "gsap";
 import { useAppContext } from "@/context/AppContext";
 import SectionLayout from "./Layout";
@@ -8,11 +7,9 @@ import { GradientLG, GradientMD, GradientSM, Lock, MarketingIcon, Users, VCoin }
 import { contents, titles } from "../utils/constants";
 
 interface WelcomeProps {
-    showSection: (section: Section) => void;
-    hideSection: (section: Section) => void;
 }
 
-const Welcome: React.FC<WelcomeProps> = ({ showSection, hideSection }) => {
+const Welcome: React.FC<WelcomeProps> = () => {
     const { orientation } = useAppContext();
 
     useEffect(() => {
@@ -21,7 +18,7 @@ const Welcome: React.FC<WelcomeProps> = ({ showSection, hideSection }) => {
 
     return (
         <div id="welcome" className={`w-full flex-1 p-5 pt-0 md:py-24 md:px-14 lg:px-10 lg:py-10 ${orientation === "portrait" ? 'lg:overflow-auto' : 'lg:overflow-hidden'}`} style={{ opacity: 0 }}>
-            <SectionLayout currentSection="WELCOME" nextSection="FEATURE" showSection={showSection} hideSection={hideSection} ltr={false}>
+            <SectionLayout nextSection="FEATURE" ltr={false}>
                 <div className={`w-full h-full flex-1 flex flex-col gap-4 px-5 pt-12 pb-11 items-end justify-evenly md:pt-0 md:pb-[84px] md:px-14 lg:px-5 lg:pb-[10%] xl:px-10 2xl:px-28 xl:h-[75%]`}>
                     <div className={`flex flex-col items-start gap-4 ${orientation === "portrait" ? '' : 'lg:w-full lg:max-w-[900px]'}`}>
                         <h2 className="w-full mt-8 mb-0 md:text-3xl md:leading-8 md:text-right lg:text-4xl 2xl:text-5xl">

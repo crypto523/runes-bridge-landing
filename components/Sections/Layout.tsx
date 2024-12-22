@@ -1,6 +1,5 @@
 import React, {
     ReactNode,
-    useRef,
     useState,
     useEffect,
 } from "react";
@@ -16,23 +15,17 @@ import { useAppContext } from "@/context/AppContext";
 interface LayoutProps {
     children: ReactNode;
     className?: string;
-    currentSection: Section;
-    hideSection: (section: Section) => void;
     nextSection: Section;
-    showSection: (section: Section) => void;
     ltr?: boolean;
 }
 
 const SectionLayout: React.FC<LayoutProps> = ({
     children,
     className = "",
-    currentSection,
-    hideSection,
     nextSection,
-    showSection,
     ltr = true
 }) => {
-    const { orientation } = useAppContext();
+    const { orientation, viewSection, setViewSection } = useAppContext();
     const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
 
@@ -51,8 +44,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
     }, []);
 
     const showHero = () => {
-        hideSection(currentSection);
-        showSection("HERO");
+        setViewSection("HERO");
     };
 
     return (
@@ -69,7 +61,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                     </div>
 
                     <div className="pb-[30px] w-full flex flex-col items-center cursor-pointer"
-                        onClick={() => { hideSection(currentSection); showSection(nextSection); }}>
+                        onClick={() => setViewSection(nextSection)}>
                         <div className="w-[90px] pr-[180px] font-conthrax font-600 text-[10px] leading-[12px] text-[#000000] whitespace-nowrap rotate-90 ">
                             explore more
                         </div>
@@ -84,11 +76,7 @@ const SectionLayout: React.FC<LayoutProps> = ({
                         <Navbar
                             className={`!border-b-0 hidden md:flex ${orientation === "portrait" ? 'lg:h-[90px]' : ''} ${ltr ? '!pl-5 !pr-0' : '!pr-5 !pl-0 '}`}
                             mainClass={ltr ? '' : 'flex-row-reverse'}
-                            subClass={`!justify-end gap-14 md:gap-3 lg:gap-5 xl:gap-14 ${ltr ? '' : 'flex-row-reverse'}`}
-                            onLogoClick={showHero}
-                            currentSection={currentSection}
-                            hideSection={hideSection}
-                            showSection={showSection} />
+                            subClass={`!justify-end gap-14 md:gap-3 lg:gap-5 xl:gap-14 ${ltr ? '' : 'flex-row-reverse'}`} />
 
                         {children}
                     </div>
@@ -96,9 +84,6 @@ const SectionLayout: React.FC<LayoutProps> = ({
                     <MenuBar
                         isOpened={isMenuOpened}
                         setIsOpened={setIsMenuOpened}
-                        currentSection={currentSection}
-                        hideSection={hideSection}
-                        showSection={showSection}
                         isRight={!ltr} />
                 </div>
             </div>

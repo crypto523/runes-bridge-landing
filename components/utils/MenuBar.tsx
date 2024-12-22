@@ -3,13 +3,11 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { menuList } from "./constants";
 import { Triangle } from "./Icons";
+import { useAppContext } from "@/context/AppContext";
 
 interface MenuBarProps {
     isOpened: boolean;
     setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
-    currentSection: Section;
-    showSection: (section: Section) => void;
-    hideSection: (section: Section) => void;
     isRight?: boolean;
     className?: string;
 }
@@ -17,17 +15,24 @@ interface MenuBarProps {
 const MenuBar: React.FC<MenuBarProps> = ({
     isOpened,
     setIsOpened,
-    showSection,
-    hideSection,
-    currentSection,
-    isRight=false,
-    className=""
+    isRight = false,
+    className = ""
 }) => {
+    const { isMobile, viewSection, setViewSection } = useAppContext();
 
     const navigateSection = (section: Section) => {
-        hideSection(currentSection);
-        showSection(section);
+        console.log("Log: ", viewSection, section, isMobile);
         setIsOpened(false);
+        
+        if (section === "CTOGOVERNANCE" || section === "RBVGOVERNANCE") {
+            if (isMobile) {
+                setViewSection(section);
+            } else {
+                setViewSection("GOVERNANCE")
+            }
+        } else {
+            setViewSection(section);
+        }
     };
 
     return (
@@ -36,7 +41,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
                 {menuList.map((menu, index) => (
                     <div className="cursor-pointer" key={index} onClick={() => navigateSection(menu.section)}>
                         {
-                            menu.section === currentSection ?
+                            menu.section === viewSection ?
                                 <div className=" relative px-6 py-2" style={{ backgroundImage: `linear-gradient(135deg, white -95%, red)` }}>
                                     {menu.content}
                                     <Triangle className="absolute top-0 left-0" />

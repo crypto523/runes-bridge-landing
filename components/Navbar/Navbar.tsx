@@ -11,22 +11,14 @@ interface NavbarProps {
     className?: string; // Add a className prop for customization
     mainClass?: string;
     subClass?: string;
-    currentSection: Section;
-    hideSection: (section: Section) => void;
-    showSection: (section: Section) => void;
-    onLogoClick: () => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
     className,
     mainClass,
     subClass,
-    currentSection,
-    hideSection,
-    showSection,
-    onLogoClick,
 }) => {
-    const { orientation } = useAppContext();
+    const { setViewSection } = useAppContext();
     const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
     const scrollTo = (id: string) => {
@@ -44,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div
                 className={classNames("w-full flex items-center justify-between", mainClass)}
             >
-                <div className="flex items-center cursor-pointer hover:scale-105 transition-all" onClick={onLogoClick}>
+                <div className="flex items-center cursor-pointer hover:scale-105 transition-all" onClick={() => setViewSection("HERO")}>
                     <p className="font-conthrax font-[600] text-xl md:text-2xl lg:text-[28px] leading-[24px] 2xl:text-3xl text-primary">
                         RunesBridge
                     </p>
@@ -118,9 +110,6 @@ const Navbar: React.FC<NavbarProps> = ({
                 <MenuBar
                     isOpened={isMenuOpened}
                     setIsOpened={setIsMenuOpened}
-                    currentSection={currentSection}
-                    hideSection={hideSection}
-                    showSection={showSection}
                     className="top-[100%] left-0 w-full h-[calc(100vh-100px)] z-[200]"
                 />}
         </div>

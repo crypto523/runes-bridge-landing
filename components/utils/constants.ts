@@ -25,11 +25,11 @@ export const contents = {
 export const menuList: Menu[] = [
     {section: "LABS", content: "Launch a CTO"},
     {section: "WELCOME", content: "V Say Welcome Home"},
-    {section: "GOVERNANCE", content: "CTO Governance"},
     {section: "AIRDROP", content: "Airdrop Guild"},
     {section: "STAKING", content: "Staking Forge"},
     {section: "BRIDGE", content: "Bridge"},
-    {section: "GOVERNANCE", content: "RBV Governance"},
+    {section: "CTOGOVERNANCE", content: "CTO Governance"},
+    {section: "RBVGOVERNANCE", content: "RBV Governance"},
     {section: "TASKBOARD", content: "Task Board / Suggestion"},
-    {section: "RBV", content: "RBV Token"},
+    {section: "RBVTOKEN", content: "RBV Token"},
 ];

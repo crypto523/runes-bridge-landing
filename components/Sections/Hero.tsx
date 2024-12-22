@@ -6,16 +6,13 @@ import Banner from "../Banner/Banner";
 import RunesButton from "../utils/Button";
 import Planet from "../Planet/Planet";
 import gsap from "gsap";
-import { Section } from "@/app/page";
 import { useAppContext } from "@/context/AppContext";
 
 interface HeroProps {
-    showSection: (section: Section) => void;
-    hideSection: (section: Section) => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
-    const { orientation } = useAppContext();
+const Hero: React.FC<HeroProps> = () => {
+    const { orientation, setViewSection } = useAppContext();
 
     useEffect(() => {
         const animation = gsap
@@ -53,15 +50,14 @@ const Hero: React.FC<HeroProps> = ({ showSection, hideSection }) => {
             .to("#up", { translateY: -400, opacity: 0, duration: 2 })
             .to("#planet", {
                 translateY: 400, opacity: 0, duration: 2, onComplete: () => {
-                    showSection("LABS");
-                    hideSection("HERO");
+                    setViewSection("LABS");
                 }
             }, "<");
     }
 
     return (
         <section className="w-[100vw] min-h-[100vh] flex flex-col items-centers" id="hero" style={{ backgroundImage: `url("bg-grid.svg")`, zIndex: 100 }}>
-            <Navbar currentSection="HERO" hideSection={hideSection} showSection={showSection} onLogoClick={() => { }} className={`hidden md:flex md:!py-10 md:h-full !max-h-fit ${orientation === "portrait" ? '!lg:border-b-0' : ''}`} subClass="md:gap-3 md:justify-end" />
+            <Navbar className={`hidden md:flex md:!py-10 md:h-full !max-h-fit ${orientation === "portrait" ? '!lg:border-b-0' : ''}`} subClass="md:gap-3 md:justify-end" />
             <div className={`w-full flex-1 flex flex-col items-center justify-evenly ${orientation === "portrait" ? 'lg:justify-evenly' : ''}`}>
                 <div id="up">
                     <Banner />

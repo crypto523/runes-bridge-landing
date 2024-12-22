@@ -1,22 +1,19 @@
 import React, { useEffect } from "react";
 import SectionLayout from "./Layout";
-import { Section } from "@/app/page";
 import gsap from "gsap";
 
 interface RBVTokenProps {
-    showSection: (section: Section) => void;
-    hideSection: (section: Section) => void;
 }
 
-const RBVToken: React.FC<RBVTokenProps> = ({ showSection, hideSection }) => {
+const RBVToken: React.FC<RBVTokenProps> = () => {
 
     useEffect(() => {
         gsap.to("#rbv", { opacity: 1, scaleX: 1, duration: 1 })
     })
 
     return (
-        <div id="rbv" className="absolute top-0 w-[100vw] h-[100vh] opacity-0">
-            <SectionLayout showSection={showSection} nextSection="HERO" currentSection="RBV" hideSection={hideSection}>
+        <div id="rbv" className={`w-full md:h-screen flex-1 flex items-center p-5 pt-0 md:py-24 md:px-14 lg:px-10 lg:py-10 lg:portrait:overflow-auto lg:landscape:overflow-hidden`} style={{ opacity: 0 }}>
+            <SectionLayout nextSection="RBVTOKEN">
                 <div className="w-2/3 flex-1 flex flex-col items-center justify-center">
                     <h2 className="font-poppins font-[600] text-[48px] text-primary mb-7">RBV Token</h2>
                     <div className="w-full flex items-center font-poppins font-[500] text-[24px] text-[#666666] border-[#C4C3CB] border-b-[0.8px]">

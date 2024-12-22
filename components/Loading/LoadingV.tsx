@@ -4,12 +4,15 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { url } from "inspector";
+import { useAppContext } from "@/context/AppContext";
 
 interface LoadingVProps {
-  onFinishV: () => void;
+  setVLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
+const LoadingV: React.FC<LoadingVProps> = ({ setVLoading }) => {
+  const { setViewSection } = useAppContext();
+
   useEffect(() => {
     const tl = gsap.timeline();
     tl.to("h5#v-welcome", {
@@ -23,7 +26,15 @@ const LoadingV: React.FC<LoadingVProps> = ({ onFinishV }) => {
   });
 
   const onFinish = () => {
-    onFinishV();
+    const tl = gsap.timeline();
+    tl.to("div#landingv", {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        setVLoading(false);
+        setViewSection("HERO");
+      },
+    });
   };
 
   return (
