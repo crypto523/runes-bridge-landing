@@ -1,4 +1,4 @@
-import { defaultSections, Section } from "@/app/page";
+import { Section } from "@/app/page";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 type Orientation = "portrait" | "landscape";
@@ -11,6 +11,7 @@ interface AppContextProps {
     handleWheel: (event: React.WheelEvent<HTMLDivElement>) => void
 }
 
+const defaultSections: Section[] = ["HERO", "LABS", "WELCOME", "FEATURE", "AIRDROP", "STAKING", "BRIDGE", "GOVERNANCE", "TASKBOARD", "RBVTOKEN"];
 const AppContext = createContext<AppContextProps | undefined>(undefined);
 
 export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
