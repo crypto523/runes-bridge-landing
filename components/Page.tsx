@@ -16,7 +16,7 @@ export default function HomePage() {
     const { viewSection } = useAppContext();
 
     return (
-        <main className="relative w-full h-full flex flex-col">
+        <div className="relative w-full h-full flex flex-col">
             {viewSection === "HERO" && <Hero />}
             {viewSection === "LABS" && <CTOLabs />}
             {viewSection === "WELCOME" && <Welcome />}
@@ -29,6 +29,6 @@ export default function HomePage() {
             {viewSection === "GOVERNANCE" && <Governance />}
             {viewSection === "TASKBOARD" && <Taskboard />}
             {viewSection === "RBVTOKEN" && <RBVToken />}
-        </main>
+        </div>
     );
 }

@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <AppContextProvider>
-      <main className="relative w-full h-full flex flex-col">
+      <main className="relative w-full h-full flex flex-col items-center md:justify-center">
         <Navbar className={`md:hidden`} />
 
         <HomePage />

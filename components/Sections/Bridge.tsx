@@ -27,8 +27,8 @@ const Bridge: React.FC<BridgeProps> = () => {
             </div>
           </div>
 
-          <div className={`w-full flex items-center justify-center lg:landscape:w-[50%]`}>
-            <Planet class="!opacity-1 translate-y-0 scale-50 xl:scale-75 -z-10" />
+          <div className={`w-full flex items-center justify-center md:w-2/3 lg:landscape:w-[50%]`}>
+            <Planet class="!opacity-1 translate-y-0 scale-50 md:scale-100 lg:landscape:scale-50 xl:scale-75 -z-10" />
           </div>
         </div>
       </SectionLayout>

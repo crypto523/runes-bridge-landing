@@ -15,9 +15,9 @@ const Features: React.FC<FeaturesProps> = () => {
     })
 
     return (
-        <div id="feature" className={`w-full flex-1 p-5 pt-0 md:py-24 md:px-14 lg:px-10 lg:py-10 lg:portrait:overflow-auto lg:landscape:overflow-hidden`} style={{ opacity: 0 }}>
+        <div id="feature" className={`w-full flex-1 p-5 pt-0 md:py-24 md:px-14 lg:px-10 lg:py-10 `} style={{ opacity: 0 }}>
             <SectionLayout nextSection="AIRDROP">
-                <div className={`w-full h-full flex-1 flex flex-col gap-4 px-5 pt-12 pb-11 items-end justify-evenly md:pt-0 md:pb-[84px] md:px-14 lg:h-[75%] lg:portrait:px-10 lg:landscape:px-5 lg:portrait:pb-[10%] lg:landscape:pb-[5%] xl:px-10 2xl:px-28 `}>
+                <div className={`w-full h-full flex-1 flex flex-col gap-4 px-5 pt-12 pb-11 items-end justify-evenly md:pt-0 md:pb-[84px] md:px-14 lg:h-[75%] lg:portrait:px-10 lg:landscape:px-5 lg:portrait:pb-[10%] lg:landscape:pb-[7%] xl:px-10 2xl:px-28 `}>
                     <div className={`flex flex-col items-start gap-4 md:hidden lg:portrait:flex lg:portrait:w-full lg:portrait:max-w-[900px]`}>
                         <h2 className="w-full mt-8 mb-0 md:text-3xl md:leading-8 md:text-right lg:text-4xl 2xl:text-5xl">
                             V Says Welcome Home

@@ -28,12 +28,12 @@ const Governance: React.FC<GovernanceProps> = () => {
                             </div>
                         </div>
                         <div className={`col-span-1 flex items-center justify-center`}>
-                            <Bank className={`w-2/3 lg:w-1/3 xl:w-2/3`} />
+                            <Bank className={`w-2/3 lg:w-1/3 2xl:w-2/3`} />
                         </div>
                     </div>
                     <div className="w-full p-2 grid md:grid-cols-3 lg:portrait:grid-cols-2 lg:landscape:grid-cols-1 xl:landscape:p-5">
-                        <div className={`col-span-1 flex items-center justify-center lg:hidden xl:flex`}>
-                            <Weight className={`w-2/3`} />
+                        <div className={`col-span-1 flex items-center justify-center lg:landscape:hidden 2xl:flex`}>
+                            <Weight className={`w-2/3 lg:w-1/3 2xl:w-2/3`} />
                         </div>
                         <div className={`md:col-span-2 lg:portrait:col-span-1 flex flex-col items-start justify-center`}>
                             <h2 className="md:text-3xl md:leading-8 xl:text-4xl 2xl:text-5xl">
@@ -52,19 +52,3 @@ const Governance: React.FC<GovernanceProps> = () => {
 }
 
 export default Governance;
-// <SectionLayout nextSection="TASKBOARD">
-//     <div className="w-full flex-1 flex items-center justify-around">
-//         <div className="max-w-[500px] w-[35vw] h-full flex flex-col items-center justify-evenly">
-//             <div className="flex flex-col items-start gap-[10px]">
-//                 <h2 className="font-poppins font-[600] text-[32px] text-primary">CTO Governance</h2>
-//                 <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-secondary">When launching a CTO project it’s important to get it right. Raising revenue and maintaining a treasury is integral to it&apos;s long term success, and must be handled in a manner which protects the community from catastrophic loss.</p>
-//             </div>
-//             <Image src="/blocks.svg" width={275} height={275} alt="blocks" style={{ height: "30vh", width: "auto" }} />
-//         </div>
-//         <div className="max-w-[500px] w-[35vw] flex flex-col items-start gap-[10px]">
-//             <h2 className="font-poppins font-[600] text-[32px] text-primary">RBV Governance</h2>
-//             <p className="font-inter font-[500] text-[16px] leading-[19.36px] text-secondary">V is deeply committed to governance and is developing a robust, trustless system that involves elected members, rotating keys, and a formal decision making process. This system is designed to ensure that the project&apos;s direction constantly aligns with and engages the community and the broader crypto space.
-//                 In the meantime, the treasury and all wallets are maintained using a system of multisig protocols with redundancy measures for lost or compromised keys.</p>
-//         </div>
-//     </div>
-// </SectionLayout>

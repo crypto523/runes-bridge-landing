@@ -49,8 +49,8 @@ const SectionLayout: React.FC<LayoutProps> = ({
 
     return (
         <div className={`relative w-full h-full flex flex-col ${className}`} >
-            <Image src="/vector1.svg" width={50} height={1050} alt="vector1"
-                className={`hidden lg:block absolute top-[50%] -z-10 ${ltr ? 'right-0' : 'left-0'}`} />
+            {/* <Image src="/vector1.svg" width={50} height={1050} alt="vector1"
+                className={`hidden lg:block absolute top-[50%] -z-10 ${ltr ? 'right-0' : 'left-0'}`} /> */}
 
             <div className={`relative w-full h-full flex flex-col z-30 ${ltr ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 <div className={`hidden md:flex w-[5%] lg:w-[4.55%] h-full flex-col items-center justify-between border-[#626262] ${ltr ? 'border-r-[1px]' : 'border-l-[1px]'}`}>
