@@ -1,5 +1,6 @@
 import { useAppContext } from "@/context/AppContext";
 import { useEffect, useRef, useState } from "react";
+import { BottomBar, BottomBarLG, BottomBarMD, BuildingBottomIcon, ChartBottomIcon, DiscordBottomIcon, EthBottomIcon, NoteBottomIcon, ParachuteBottomIcon } from "./Icon";
 
 interface BackgroundProps {
     ltr: boolean
@@ -12,8 +13,9 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
     const [topGap, setTopGap] = useState<string>("15%");
     const [bottomGap, setBottomGap] = useState<string>("10%");
     const [cornerWidth, setCornerWidth] = useState<number>(2);
+    const [points, setPoints] = useState<string>('')
 
-    const [dimensions, setDimensions] = useState<{ width: number, heigt: number }>({ width: window.innerWidth, heigt: window.innerWidth })
+    const [dimensions, setDimensions] = useState<{ width: number, height: number }>({ width: window.innerWidth, height: window.innerWidth })
 
     useEffect(() => {
         const handleGapSize = () => {
@@ -41,7 +43,7 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
 
             setDimensions({
                 width: backgroundRef.current?.clientWidth!,
-                heigt: backgroundRef.current?.clientHeight!
+                height: backgroundRef.current?.clientHeight!
             });
         }
 
@@ -59,7 +61,7 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
             <svg
                 width="100%"
                 height="100%"
-                className="z-20"
+                className="z-30"
                 style={ltr ? {} : { transform: "rotateY(180deg)" }}
                 xmlns="http://www.w3.org/2000/svg"
             >
@@ -126,7 +128,7 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
                     strokeWidth={1.5}
                     vectorEffect="non-scaling-stroke"
                 />
-                <line
+                {/* <line
                     className="hidden lg:block"
                     x1="100%"
                     y1={`calc(98% - ${bottomGap})`}
@@ -135,7 +137,7 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
                     stroke="#C4C3CB"
                     strokeWidth={1.5}
                     vectorEffect="non-scaling-stroke"
-                />
+                /> */}
                 <line
                     x1="100%"
                     y1={`calc(98% - ${bottomGap})`}
@@ -171,25 +173,21 @@ const Background: React.FC<BackgroundProps> = ({ ltr }) => {
                     stroke="var(--color-secondary)"
                     strokeWidth={1.5}
                 />
-                {/* <polygon
-                points={`${dimensions.width * 0.25 + dimensions.height * 0.01},${dimensions.height * 1
-                    } ${dimensions.width * 0.3 + dimensions.height * 0.004},${dimensions.height * 0.907
-                    } ${dimensions.width * 0.95},${dimensions.height * 0.907} ${dimensions.width * 0.95
-                    },${dimensions.height * 1}`}
-                fill="black"
-            /> */}
             </svg>
-            <div ref={backgroundRef} className={`absolute left-0 right-0 -z-10`} style={{ top: topGap, bottom: bottomGap, backgroundColor: "white" }}>
-                {/* <svg
-                    width="100%"
-                    height="100%"
-                    className="absolute bottom-0 right-0 z-20"
-                    style={ltr ? {} : { transform: "rotateY(180deg)" }}
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <polygon className="absolute bottom-0 right-0" points={`0,${dimensions.heigt} 0,0 ${dimensions.width},0 ${dimensions.width},${dimensions.heigt}`} fill="red" stroke="red" />
-                </svg> */}
+            <div className={`absolute bottom-0 -z-10 ${ltr ? 'right-0' : 'left-0 bottom'} translate-y-1 flex items-center justify-center gap-2 w-[75%] lg:landscape:w-[70%] lg:bg-black lg:gap-3 xl:gap-5 2xl:gap-8`} style={{ height: bottomGap }}>
+                <BottomBar className="absolute inset-0 w-full h-full -z-10 lg:hidden" />
+                <BottomBarMD className="absolute inset-0 w-full h-full -z-10 hidden lg:portrait:flex" />
+                <BottomBarLG className="absolute left-0 top-0 hidden lg:landscape:flex -translate-x-5" />
+                <DiscordBottomIcon className="md:w-11 md:h-11 2xl:w-14 2xl:h-14" />
+                <EthBottomIcon className="md:w-11 md:h-11 2xl:w-14 2xl:h-14" />
+                <ChartBottomIcon className="md:w-11 md:h-11 2xl:w-14 2xl:h-14" />
+                <BuildingBottomIcon className="md:w-11 md:h-11 2xl:w-14 2xl:h-14" />
+                <ParachuteBottomIcon className="md:w-11 md:h-11 2xl:w-14 2xl:h-14" />
+                <NoteBottomIcon className="md:w-11 md:h-11 2xl:w-14 2xl:h-14" />
             </div>
+            {/* <div className={`absolute bottom-0 left-[24%] w-[70%] bg-black`} style={{ height: bottomGap }}>
+                
+            </div> */}
         </div>
     )
 }

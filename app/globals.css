@@ -487,6 +487,10 @@ h3,
   color: #061012;
 }
 
+.bottom {
+  transform: rotateY(180deg) translateY(3px);
+}
+
 h4,
 .h4,
 .lead {
