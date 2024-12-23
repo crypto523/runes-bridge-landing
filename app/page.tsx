@@ -29,7 +29,6 @@ if (typeof window !== "undefined") {
 }
 
 export type Section = "HERO" | "LABS" | "WELCOME" | "AIRDROP" | "FEATURE" | "BRIDGE" | "STAKING" | "CTOGOVERNANCE" | "RBVGOVERNANCE" | "GOVERNANCE" | "TASKBOARD" | "RBVTOKEN" | "NONE"
-export const defaultSections: Section[] = ["HERO", "LABS", "WELCOME", "FEATURE", "AIRDROP", "STAKING", "BRIDGE", "GOVERNANCE", "TASKBOARD", "RBVTOKEN"];
 
 export default function Home() {
 
