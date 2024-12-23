@@ -16,7 +16,7 @@ const Bridge: React.FC<BridgeProps> = () => {
 
   return (
     <div id="bridge" className={`w-full md:h-screen flex-1 flex items-center p-5 pt-0 md:py-24 md:px-14 lg:px-10 lg:py-10 lg:portrait:overflow-auto lg:landscape:overflow-hidden`} style={{ opacity: 0 }}>
-      <SectionLayout ltr={false} nextSection={isMobile ? "CTOGOVERNANCE" : "RBVGOVERNANCE"}>
+      <SectionLayout ltr={false} nextSection={isMobile ? "CTOGOVERNANCE" : "GOVERNANCE"}>
         <div className={`w-full h-full flex-1 flex flex-col md:flex-col-reverse lg:flex-row-reverse lg:h-[75%] lg:flex-none items-center justify-evenly gap-4 px-5 pt-12 pb-11 md:pt-0 md:pb-[84px] lg:pb-0 lg:portrait:flex-col-reverse`}>
           <div className={`flex flex-col items-start gap-2.5 lg:landscape:w-[60%] xl:w-[50%]`}>
             <h2 className="md:text-3xl md:leading-8 xl:text-4xl 2xl:text-5xl">
@@ -28,7 +28,7 @@ const Bridge: React.FC<BridgeProps> = () => {
           </div>
 
           <div className={`w-full flex items-center justify-center lg:landscape:w-[50%]`}>
-            <Planet class="!opacity-1 translate-y-0 scale-75 -z-10" />
+            <Planet class="!opacity-1 translate-y-0 scale-50 xl:scale-75 -z-10" />
           </div>
         </div>
       </SectionLayout>

@@ -30,12 +30,13 @@ const Taskboard: React.FC<TaskboardProps> = () => {
             </div>
           </div>
 
-          <div className={`w-full flex flex-col items-center justify-center lg:landscape:w-[50%] pb-4`}>
+          <div className={`w-full flex flex-col items-center justify-center lg:landscape:w-[50%] pb-4 gap-2`}>
             <svg
               width="308"
               height="100"
               viewBox="0 0 308 100"
               fill="none"
+              className="w-60 h-20 lg:w-[308px] lg:h-[100px]"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -80,6 +81,7 @@ const Taskboard: React.FC<TaskboardProps> = () => {
               height="101"
               viewBox="0 0 308 101"
               fill="none"
+              className="w-60 h-20 lg:w-[308px] lg:h-[100px]"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -119,6 +121,7 @@ const Taskboard: React.FC<TaskboardProps> = () => {
               height="100"
               viewBox="0 0 308 100"
               fill="none"
+              className="w-60 h-20 lg:w-[308px] lg:h-[100px]"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
